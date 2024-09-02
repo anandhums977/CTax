@@ -1,15 +1,135 @@
 .login-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  height: 100%;
+  height: -webkit-fill-available;
+  height: -moz-available; /* For Firefox */
+  height: fill-available; /* Generic */
   justify-content: center;
   align-items: center;
   padding: 50px;
-  .left-panel{
+  .left-panel {
     padding: 5%;
     img {
-      height: 35vw;
+      height: 50vh;
       width: auto;
+    }
   }
+  .right-panel {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .form-card {
+      background: linear-gradient(to right, #00aa6d 0%, #00aa98 100%);
+      height: 100%;
+      width: 100%;
+      border-radius: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      font-family: "Roboto", sans-serif;
+      .form-card-title-and-description {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 40px;
+        .title {
+          font-size: 3.5vw;
+          font-weight: bold;
+          color: white;
+        }
+        .description{
+          font-size: 1.2vw;
+          font-weight: 400;
+          color: white;
+        }
+      }
+      form.login-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        gap: 20px;
+        .input-field-container{
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          mat-error {
+            width: 69%;
+            margin-top: 5px;
+            font-size: 13px;
+            color: white;
+        }
+          .input-field {
+            height: 7vh;
+            min-height: 66px;
+            max-height: 75px;
+            width: 75%;
+            border-radius: 1000px;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 0px 10px;
+
+            input {
+              width: 75%;
+              height: 58%;
+              border: none;
+          }
+
+          /* Targeting the placeholder */
+          input::placeholder {
+              color: #0000006c; /* Custom color */
+              font-size: 1.5vw; /* Custom font size */
+              font-weight: 400; /* Custom font weight */
+              opacity: 1; /* Ensure the color is fully applied */
+          }
+
+          /* For webkit browsers like Chrome, Safari */
+          input::-webkit-input-placeholder {
+            color: #0000006c; /* Custom color */
+            font-size: 1.5vw; /* Custom font size */
+            font-weight: 400; /* Custom font weight */
+            opacity: 1; /* Ensure the color is fully applied */
+          }
+
+          /* For Mozilla Firefox */
+          input::-moz-placeholder {
+            color: #0000006c; /* Custom color */
+            font-size: 1.5vw; /* Custom font size */
+            font-weight: 400; /* Custom font weight */
+            opacity: 1; /* Ensure the color is fully applied */
+          }
+
+          /* For Microsoft Edge */
+          input::-ms-input-placeholder {
+            color: #0000006c; /* Custom color */
+            font-size: 1.5vw; /* Custom font size */
+            font-weight: 400; /* Custom font weight */
+            opacity: 1; /* Ensure the color is fully applied */
+          }
+
+
+        }
+        }
+
+      button {
+        border: 1px solid white;
+        border-radius: 25px;
+        height: 50px;
+        width: 115px;
+        background: transparent;
+        color: white;
+        font-size: 18px;
+        font-weight: 600;
+    }
+    }
+    }
   }
 }
