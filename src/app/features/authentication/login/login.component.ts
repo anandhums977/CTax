@@ -4,6 +4,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
 
+
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -33,6 +34,7 @@ export class LoginComponent {
 
   onLogin() {
     if (this.loginForm.valid) {
+    
       const { email, password } = this.loginForm.value;
       console.log('Email:', email);
       console.log('Password:', password);
