@@ -34,7 +34,7 @@ export class LoginComponent {
 
   onLogin() {
     if (this.loginForm.valid) {
-    
+      
       const { email, password } = this.loginForm.value;
       console.log('Email:', email);
       console.log('Password:', password);
