@@ -1,0 +1,34 @@
+.main {
+  * {
+    padding: 0;
+    margin: 0;
+    font-family: Roboto;
+  }
+
+  $main-green: #00aa98;
+
+  .just-center {
+    display: flex;
+    align-items: center;
+  }
+
+  .full-center {
+    @extend .just-center;
+    justify-content: center;
+  }
+
+  button {
+    @extend .full-center;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    background: $main-green;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.5s;
+
+    &:hover {
+      background: #029082;
+    }
+  }
+}

@@ -1,1 +1,16 @@
-<p>header works!</p>
+<div class="main-head-container">
+   <div class="left">
+      <div class="logo">
+         <p>CTax</p>
+      </div>
+   </div>
+
+   <div class="middle">
+      <a [ngClass]="{active: pageType === 'dash'}" (click)="pageType = 'dash'">Dashboard</a>
+      <a [ngClass]="{active: pageType != 'dash'}" (click)="pageType = 'stand'">Stand Wise Data</a>
+   </div>
+
+   <div class="right">
+      <app-button [buttonLabel]="'Sign Out'" (buttonclicked)="buttonClicked($event)"></app-button>
+   </div>
+</div>
