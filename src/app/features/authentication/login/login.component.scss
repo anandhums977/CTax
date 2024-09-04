@@ -10,8 +10,8 @@
   .left-panel {
     padding: 5%;
     img {
-      height: 50vh;
-      width: auto;
+      height: auto;
+      width: 30vw;
     }
   }
   .right-panel {
@@ -36,14 +36,36 @@
         justify-content: center;
         margin-bottom: 40px;
         .title {
-          font-size: 3.5vw;
+          font-size: 50px;
           font-weight: bold;
           color: white;
+          margin-bottom: 5px;
+          @media (min-width: 1900px) {
+            font-size: 70px !important; // Smaller font size for screens less than or equal to 768px
+          }
+
+          @media (max-width: 768px) {
+            font-size: 40px !important; // Smaller font size for screens less than or equal to 768px
+          }
+
+          @media (max-width: 480px) {
+            font-size: 30px !important; // Even smaller font size for screens less than or equal to 480px
+          }
         }
         .description{
-          font-size: 1.2vw;
+          font-size: 14px;
           font-weight: 400;
           color: white;
+          @media (min-width: 1900px) {
+            font-size: 18px !important; // Smaller font size for screens less than or equal to 768px
+          }
+          @media (max-width: 768px) {
+            font-size: 12px !important; // Smaller font size for screens less than or equal to 768px
+          }
+
+          @media (max-width: 480px) {
+            font-size: 10px!important; // Even smaller font size for screens less than or equal to 480px
+          }
         }
       }
       form.login-form {
@@ -86,7 +108,7 @@
           /* Targeting the placeholder */
           input::placeholder {
               color: #0000006c; /* Custom color */
-              font-size: 1.5vw; /* Custom font size */
+              font-size: 18px; /* Custom font size */
               font-weight: 400; /* Custom font weight */
               opacity: 1; /* Ensure the color is fully applied */
           }
@@ -94,7 +116,7 @@
           /* For webkit browsers like Chrome, Safari */
           input::-webkit-input-placeholder {
             color: #0000006c; /* Custom color */
-            font-size: 1.5vw; /* Custom font size */
+            font-size: 18px; /* Custom font size */
             font-weight: 400; /* Custom font weight */
             opacity: 1; /* Ensure the color is fully applied */
           }
@@ -102,7 +124,7 @@
           /* For Mozilla Firefox */
           input::-moz-placeholder {
             color: #0000006c; /* Custom color */
-            font-size: 1.5vw; /* Custom font size */
+            font-size: 18px; /* Custom font size */
             font-weight: 400; /* Custom font weight */
             opacity: 1; /* Ensure the color is fully applied */
           }
@@ -110,7 +132,7 @@
           /* For Microsoft Edge */
           input::-ms-input-placeholder {
             color: #0000006c; /* Custom color */
-            font-size: 1.5vw; /* Custom font size */
+            font-size: 18px; /* Custom font size */
             font-weight: 400; /* Custom font weight */
             opacity: 1; /* Ensure the color is fully applied */
           }

@@ -6,5 +6,18 @@
 // // 	color: $color_1;
 // // }
 
-html, body { height: 100vh; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body {
+  height: 100vh;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  @media (max-width: 768px) {
+    font-size: 12px !important; // Smaller font size for screens less than or equal to 768px
+  }
+
+  @media (max-width: 480px) {
+    font-size: 10px!important; // Even smaller font size for screens less than or equal to 480px
+  }
+ }

@@ -10,4 +10,6 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './theme.component.html',
   styleUrl: './theme.component.scss',
 })
-export class ThemeComponent {}
+export class ThemeComponent {
+  isLoggedIn:boolean = false;
+}
