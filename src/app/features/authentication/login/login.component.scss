@@ -11,6 +11,7 @@
     grid-template-columns: 1fr;
     height: 100%;
     height: max-content !important;
+    gap: 20px;
     .left-panel {
       padding: 0;
       justify-content: center;
@@ -20,7 +21,6 @@
       }
     }
     .right-panel{
-      margin-top: 20px !important;
       .form-card {
         padding: 20px;
         border-radius: 30px !important;
