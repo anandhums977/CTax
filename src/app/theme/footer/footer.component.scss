@@ -6,6 +6,10 @@
   }
 
   $main-green: #00aa98;
+  min-height: 10vw;
+  background: rgb(0, 170, 152, 0.5);
+  margin: 10px;
+  border-radius: 8px;
 
   .just-center {
     display: flex;
@@ -18,6 +22,11 @@
   }
 
   .logo-section {
+    p {
+      color: #fff;
+      font-size: 32px;
+      font-weight: 500;
+    }
   }
 
   .based-on-roles {
