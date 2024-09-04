@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { RibbonComponent } from '../../../../common/ribbon/ribbon.component';
 import {MatTabsModule} from '@angular/material/tabs';
-
+import { SearchComponent } from '../../../../common/search/search.component';
 @Component({
   selector: 'app-operations-manager-dashboard',
   standalone: true,
-  imports: [RibbonComponent,MatTabsModule],
+  imports: [RibbonComponent,MatTabsModule,SearchComponent],
   templateUrl: './operations-manager-dashboard.component.html',
   styleUrl: './operations-manager-dashboard.component.scss'
 })
