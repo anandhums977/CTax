@@ -2,13 +2,13 @@ import { Component } from '@angular/core';
 import { RibbonComponent } from '../../common/ribbon/ribbon.component';
 
 @Component({
-  selector: 'app-root-admin',
+  selector: 'app-root-admin-dashboard',
   standalone: true,
   imports: [RibbonComponent],
-  templateUrl: './root-admin.component.html',
-  styleUrl: './root-admin.component.scss',
+  templateUrl: './root-admin-dashboard.component.html',
+  styleUrl: './root-admin-dashboard.component.scss',
 })
-export class RootAdminComponent {
+export class RootAdminDashboardComponent {
   cardDetails = [
     {
       name: 'Admins',
