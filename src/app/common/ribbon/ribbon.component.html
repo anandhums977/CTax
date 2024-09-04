@@ -1,1 +1,28 @@
-<p>ribbon works!</p>
+<div class="main-ribbon-container">
+   <div class="left">
+      <div class="each-info">
+         <img src="../../../assets/images/ribbon/avatar.svg">
+         <p class="title">Name:</p>
+         <p class="value">John Doe</p>
+      </div>
+
+      <div class="each-info">
+         <img src="../../../assets/images/ribbon/location.svg">
+         <p class="title">Location:</p>
+         <p class="value">Kochi</p>
+      </div>
+   </div>
+
+   <div class="right">
+      @for(card of cardData; track card){
+      <div class="each-card">
+         <div class="data">
+            <p class="count">{{card.value}}</p>
+            <p class="name">{{card.name}}</p>
+         </div>
+
+         <img src="../../../assets/images/ribbon/location.svg">
+      </div>
+      }
+   </div>
+</div>
