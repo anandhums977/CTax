@@ -7,4 +7,9 @@ export const routes: Routes = [
   { path: 'login', component: LoginComponent },
   // { path: 'root-admin', component: RootAdminDashboardComponent },
   { path: 'operations-manager-dahsboard', component: OperationsManagerDashboardComponent },
+  {
+    path: 'admin',
+    loadChildren: () => import('./features/roles/admin-module/admin.routes').then(m => m.ADMIN_ROUTES)
+}
+
 ];
