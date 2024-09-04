@@ -1,0 +1,11 @@
+table.cdk-table {
+  width: 100%;
+  ::ng-deep thead {
+    border-radius: 8px 8px 0px 0px;
+    border-bottom: 1px rgba(0, 0, 0, 0.05);
+    background: rgba(0, 0, 0, 0.06);
+    height: 30px;
+    width: 100% !important;
+    display: table-caption;
+}
+}
