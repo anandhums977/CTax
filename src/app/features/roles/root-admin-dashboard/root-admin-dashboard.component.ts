@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RibbonComponent } from '../../common/ribbon/ribbon.component';
+import { RibbonComponent } from '../../../common/ribbon/ribbon.component';
 
 @Component({
   selector: 'app-root-admin-dashboard',
