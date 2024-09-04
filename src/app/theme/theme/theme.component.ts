@@ -11,5 +11,5 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './theme.component.scss',
 })
 export class ThemeComponent {
-  isLoggedIn:boolean = false;
+  isLoggedIn:boolean = true;
 }
