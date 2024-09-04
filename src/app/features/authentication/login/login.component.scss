@@ -7,6 +7,27 @@
   justify-content: center;
   align-items: center;
   padding: 50px;
+  @media(max-width:768px){
+    grid-template-columns: 1fr;
+    height: 100%;
+    height: max-content !important;
+    .left-panel {
+      padding: 0;
+      justify-content: center;
+      display: flex;
+      img{
+        width: 30vh !important;
+      }
+    }
+    .right-panel{
+      margin-top: 20px !important;
+      .form-card {
+        padding: 20px;
+        border-radius: 30px !important;
+      }
+    }
+
+  }
   .left-panel {
     padding: 5%;
     img {
@@ -81,6 +102,10 @@
           align-items: center;
           justify-content: center;
           flex-direction: column;
+          height: 66px;
+          @media (max-width: 768px){
+            height: 55px;
+          }
           mat-error {
             width: 69%;
             margin-top: 5px;
@@ -88,9 +113,8 @@
             color: white;
         }
           .input-field {
-            height: 7vh;
-            min-height: 66px;
-            max-height: 75px;
+            height: 90%;
+
             width: 75%;
             border-radius: 1000px;
             background-color: white;
@@ -111,6 +135,9 @@
               font-size: 18px; /* Custom font size */
               font-weight: 400; /* Custom font weight */
               opacity: 1; /* Ensure the color is fully applied */
+              @media (max-width: 768px){
+                font-size: 14px !important;
+              }
           }
 
           /* For webkit browsers like Chrome, Safari */
@@ -119,6 +146,9 @@
             font-size: 18px; /* Custom font size */
             font-weight: 400; /* Custom font weight */
             opacity: 1; /* Ensure the color is fully applied */
+            @media (max-width: 768px){
+              font-size: 14px !important;
+            }
           }
 
           /* For Mozilla Firefox */
@@ -127,6 +157,9 @@
             font-size: 18px; /* Custom font size */
             font-weight: 400; /* Custom font weight */
             opacity: 1; /* Ensure the color is fully applied */
+            @media (max-width: 768px){
+              font-size: 14px !important;
+            }
           }
 
           /* For Microsoft Edge */
@@ -135,6 +168,9 @@
             font-size: 18px; /* Custom font size */
             font-weight: 400; /* Custom font weight */
             opacity: 1; /* Ensure the color is fully applied */
+            @media (max-width: 768px){
+              font-size: 14px !important;
+            }
           }
 
 
