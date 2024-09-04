@@ -8,5 +8,8 @@
   width: max-content;
 }
 .search-and-table-container{
-  padding: 20px;
+  padding: 30px;
+  .table-container {
+    margin-top: 20px;
+  }
 }
