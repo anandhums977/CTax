@@ -2,7 +2,7 @@
 <mat-tab-group>
   <mat-tab label="TCA Approval">
     <div class="search-and-table-container">
-      <search></search>
+      <search></search><app-button [buttonLabel]="name"></app-button>
       <div class="table-container">
         <mat-table [dataSource]="tableData">
 
