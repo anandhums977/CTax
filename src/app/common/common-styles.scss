@@ -1,6 +1,4 @@
-@import url('../../../../common/common-styles.scss');
-
-.mat-mdc-tab-header {
+::ng-deep .mat-mdc-tab-header {
   display: flex;
   overflow: hidden;
   position: relative;

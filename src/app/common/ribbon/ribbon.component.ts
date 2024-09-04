@@ -9,4 +9,6 @@ import { Component, Input } from '@angular/core';
 })
 export class RibbonComponent {
   @Input() cardData: any[] = [];
+  @Input() name:string = '';
+  @Input() location:string = '';
 }
