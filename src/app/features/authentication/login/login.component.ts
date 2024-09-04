@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
+import { ListingTableComponent } from '../../../shared/components/listing-table/listing-table/listing-table.component';
 
 
 @Component({
@@ -14,6 +15,7 @@ import {FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, V
     MatInputModule,
     FormsModule,
     ReactiveFormsModule,
+    ListingTableComponent
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
