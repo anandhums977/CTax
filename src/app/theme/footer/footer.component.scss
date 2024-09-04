@@ -1,0 +1,19 @@
+.main-footer-container {
+  * {
+    padding: 0;
+    margin: 0;
+    font-family: Roboto;
+  }
+
+  $main-green: #00aa98;
+
+  .just-center {
+    display: flex;
+    align-items: center;
+  }
+
+  .full-center {
+    @extend .just-center;
+    justify-content: center;
+  }
+}
