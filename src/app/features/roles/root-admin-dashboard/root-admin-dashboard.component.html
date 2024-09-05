@@ -23,23 +23,25 @@
                      <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
                   </ng-container>
 
-                  <!-- Admin Name Column -->
+                  <!-- State Column -->
                   <ng-container matColumnDef="state">
                      <mat-header-cell *matHeaderCellDef> STATE </mat-header-cell>
                      <mat-cell *matCellDef="let element"> {{element.state}} </mat-cell>
                   </ng-container>
 
-                  <!-- Stand Column -->
+                  <!-- Username Column -->
                   <ng-container matColumnDef="username">
                      <mat-header-cell *matHeaderCellDef> USERNAME </mat-header-cell>
                      <mat-cell *matCellDef="let element"> {{element.username}} </mat-cell>
                   </ng-container>
 
+                  <!-- Password Column -->
                   <ng-container matColumnDef="password">
                      <mat-header-cell *matHeaderCellDef> PASSWORD </mat-header-cell>
                      <mat-cell *matCellDef="let element"> {{element.password}} </mat-cell>
                   </ng-container>
 
+                  <!-- Email Column -->
                   <ng-container matColumnDef="email">
                      <mat-header-cell *matHeaderCellDef> EMAIL </mat-header-cell>
                      <mat-cell *matCellDef="let element"> {{element.email}} </mat-cell>
@@ -61,11 +63,52 @@
 
             </div>
          </div>
-
       </mat-tab>
+
       <mat-tab label="Tax List">
+         <div class="search-and-table-container">
+            <div class="search-and-buttons">
+               <search></search>
+               <app-button [buttonLabel]="'Create Admin'" (buttonclicked)="buttonClicked($event)"></app-button>
+               <app-button [buttonLabel]="'Create State'" (buttonclicked)="buttonClicked($event)"></app-button>
+            </div>
+            <div class="table-container">
+               <mat-table [dataSource]="tableData">
 
+                  <!-- Position Column -->
+                  <ng-container matColumnDef="#">
+                     <mat-header-cell *matHeaderCellDef> # </mat-header-cell>
+                     <mat-cell *matCellDef="let element; let i = index"> {{i + 1}} </mat-cell>
+                  </ng-container>
 
+                  <!-- Name Column -->
+                  <ng-container matColumnDef="name">
+                     <mat-header-cell *matHeaderCellDef> NAME </mat-header-cell>
+                     <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+                  </ng-container>
+
+                  <!-- Admin Name Column -->
+                  <ng-container matColumnDef="amount">
+                     <mat-header-cell *matHeaderCellDef> AMOUNT </mat-header-cell>
+                     <mat-cell *matCellDef="let element"> {{element.state}} </mat-cell>
+                  </ng-container>
+
+                  <!-- Actions Column -->
+                  <ng-container matColumnDef="actions">
+                     <mat-header-cell *matHeaderCellDef> ACTIONS </mat-header-cell>
+                     <mat-cell *matCellDef="let element">
+                        <button mat-button color="primary">ACCEPT</button>
+                        <button mat-button color="warn">REJECT</button>
+                     </mat-cell>
+                  </ng-container>
+
+                  <mat-header-row *matHeaderRowDef="displayedTaxColumns"></mat-header-row>
+                  <mat-row *matRowDef="let row; columns: displayedTaxColumns;"></mat-row>
+
+               </mat-table>
+
+            </div>
+         </div>
       </mat-tab>
    </mat-tab-group>
 </div>

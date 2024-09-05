@@ -101,6 +101,7 @@ export class RootAdminDashboardComponent {
     'email',
     'actions',
   ];
+  displayedTaxColumns = ['#', 'name', 'amount', 'actions'];
 
   ngOnInit() {}
 
