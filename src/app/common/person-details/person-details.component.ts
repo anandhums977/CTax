@@ -8,5 +8,4 @@ import { Component, Input } from '@angular/core';
   styleUrl: './person-details.component.scss'
 })
 export class PersonDetailsComponent {
-  @Input() personDetails:any = {};
 }

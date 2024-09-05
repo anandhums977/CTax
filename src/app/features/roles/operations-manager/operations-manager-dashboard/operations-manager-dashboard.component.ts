@@ -1,11 +1,10 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, inject, ViewChild } from '@angular/core';
 import { RibbonComponent } from '../../../../common/ribbon/ribbon.component';
 import { MatTabsModule } from '@angular/material/tabs';
 import { SearchComponent } from '../../../../common/search/search.component';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
-import { PersonDetailsComponent } from '../../../../common/person-details/person-details.component';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
-
+import {Dialog, DIALOG_DATA, DialogModule} from '@angular/cdk/dialog';
 @Component({
   selector: 'app-operations-manager-dashboard',
   standalone: true,
@@ -14,8 +13,8 @@ import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
     MatPaginatorModule,
     MatTabsModule,
     SearchComponent,
+    DialogModule,
     MatTableModule,
-    PersonDetailsComponent,
   ],
   templateUrl: './operations-manager-dashboard.component.html',
   styleUrl: './operations-manager-dashboard.component.scss',
@@ -23,6 +22,7 @@ import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 export class OperationsManagerDashboardComponent {
   name: string = 'Deepak Jose';
   location: string = 'Kochi';
+  dialog = inject(Dialog);
   tcaApprovalData =  new MatTableDataSource([
     {
       id: 1,

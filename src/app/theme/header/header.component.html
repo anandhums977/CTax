@@ -7,7 +7,8 @@
 
    <div class="middle">
       <a [ngClass]="{active: pageType === 'dash'}" (click)="pageType = 'dash'">Dashboard</a>
-      <a [ngClass]="{active: pageType != 'dash'}" (click)="pageType = 'stand'">Stand Wise Data</a>
+      <a [ngClass]="{active: pageType === 'stand'}" (click)="pageType = 'stand'">Stand Wise Data</a>
+      <a [routerLink]="['/operations-manager-listing']" routerLinkActive="router-link-active"  [ngClass]="{active: pageType === 'opmanager'}" (click)="pageType = 'opmanager'">Operations Managers</a>
    </div>
 
    <div class="right">
