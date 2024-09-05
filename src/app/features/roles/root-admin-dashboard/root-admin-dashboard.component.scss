@@ -1,0 +1,38 @@
+.full-root-container {
+  @import url("../../../common/styles/common-styles.scss");
+  * {
+    padding: 0;
+    margin: 0;
+  }
+
+  .just-center {
+    display: flex;
+    align-items: center;
+  }
+
+  .full-center {
+    @extend .just-center;
+    justify-content: center;
+  }
+
+  .mat-mdc-tab-header {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    flex-shrink: 0;
+    width: max-content;
+  }
+  .search-and-table-container {
+    padding: 20px;
+
+    .search-and-buttons {
+      @extend .just-center;
+      gap: 15px;
+      margin-bottom: 15px;
+
+      search {
+        flex: 1;
+      }
+    }
+  }
+}

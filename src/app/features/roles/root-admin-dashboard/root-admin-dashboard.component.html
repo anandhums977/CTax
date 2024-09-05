@@ -1,1 +1,71 @@
-<app-ribbon [cardData]="cardDetails"></app-ribbon>
+<div class="full-root-container">
+   <app-ribbon [name]="name" [location]="location" [cardData]="cardDetails"></app-ribbon>
+   <mat-tab-group>
+      <mat-tab label="Admins List">
+         <div class="search-and-table-container">
+            <div class="search-and-buttons">
+               <search></search>
+               <app-button [buttonLabel]="'Create Admin'" (buttonclicked)="buttonClicked($event)"></app-button>
+               <app-button [buttonLabel]="'Create State'" (buttonclicked)="buttonClicked($event)"></app-button>
+            </div>
+            <div class="table-container">
+               <mat-table [dataSource]="tableData">
+
+                  <!-- Position Column -->
+                  <ng-container matColumnDef="#">
+                     <mat-header-cell *matHeaderCellDef> # </mat-header-cell>
+                     <mat-cell *matCellDef="let element; let i = index"> {{i + 1}} </mat-cell>
+                  </ng-container>
+
+                  <!-- Name Column -->
+                  <ng-container matColumnDef="name">
+                     <mat-header-cell *matHeaderCellDef> NAME </mat-header-cell>
+                     <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+                  </ng-container>
+
+                  <!-- Admin Name Column -->
+                  <ng-container matColumnDef="state">
+                     <mat-header-cell *matHeaderCellDef> STATE </mat-header-cell>
+                     <mat-cell *matCellDef="let element"> {{element.state}} </mat-cell>
+                  </ng-container>
+
+                  <!-- Stand Column -->
+                  <ng-container matColumnDef="username">
+                     <mat-header-cell *matHeaderCellDef> USERNAME </mat-header-cell>
+                     <mat-cell *matCellDef="let element"> {{element.username}} </mat-cell>
+                  </ng-container>
+
+                  <ng-container matColumnDef="password">
+                     <mat-header-cell *matHeaderCellDef> PASSWORD </mat-header-cell>
+                     <mat-cell *matCellDef="let element"> {{element.password}} </mat-cell>
+                  </ng-container>
+
+                  <ng-container matColumnDef="email">
+                     <mat-header-cell *matHeaderCellDef> EMAIL </mat-header-cell>
+                     <mat-cell *matCellDef="let element"> {{element.email}} </mat-cell>
+                  </ng-container>
+
+                  <!-- Actions Column -->
+                  <ng-container matColumnDef="actions">
+                     <mat-header-cell *matHeaderCellDef> ACTIONS </mat-header-cell>
+                     <mat-cell *matCellDef="let element">
+                        <button mat-button color="primary">ACCEPT</button>
+                        <button mat-button color="warn">REJECT</button>
+                     </mat-cell>
+                  </ng-container>
+
+                  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+               </mat-table>
+
+            </div>
+         </div>
+
+      </mat-tab>
+      <mat-tab label="Tax List">
+
+
+      </mat-tab>
+   </mat-tab-group>
+</div>
