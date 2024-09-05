@@ -25,8 +25,8 @@ mat-table.mat-mdc-table {
   }
   mat-row.mat-mdc-row {
     background: #f9f9f9;
-    max-height: 40px !important;
-    min-height: 40px !important;
+    max-height: 45px !important;
+    min-height: 45px !important;
     border-radius: 8px !important;
     cursor: pointer;
     &:hover{
@@ -51,6 +51,25 @@ mat-table.mat-mdc-table {
   }
 }
 
+//PAGINATOR STYLES
+::ng-deep .mat-mdc-paginator-container {
+  background-color: #eeeeee;
+  color: black !important;
+  ::ng-deep .mat-mdc-paginator-icon{
+    fill: #5B5B5B
+  }
+  ::ng-deep.mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__leading, ::ng-deep.mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__notch, ::ng-deep.mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__trailing{
+    border-color: rgb(0 0 0 / 38%);
+  }
+  ::ng-deep .mat-mdc-select-trigger {
+    color: black;
+}
+::ng-deep .mat-mdc-select-arrow{
+  svg{
+    fill: #5B5B5B
+  }
+}
+}
 
 // ACCEPT REJECT BUTTON STYLES
 .primary{
@@ -66,7 +85,7 @@ mat-table.mat-mdc-table {
 }
 %common-button-styles {
   font-weight: bold;
-  padding: 5px 15px;
+  padding: 8px 15px;
   border-radius: 8px;
   border: none;
 }
