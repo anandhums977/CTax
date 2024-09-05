@@ -1,9 +1,20 @@
 import { Component } from '@angular/core';
-import { RibbonComponent } from '../../../common/ribbon/ribbon.component';
+import { RibbonComponent } from '../../../../common/ribbon/ribbon.component';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatTableModule } from '@angular/material/table';
-import { SearchComponent } from '../../../common/search/search.component';
-import { ButtonComponent } from '../../../common/button/button.component';
+import { SearchComponent } from '../../../../common/search/search.component';
+import { ButtonComponent } from '../../../../common/button/button.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import {
+  MatDialog,
+  MatDialogActions,
+  MatDialogClose,
+  MatDialogContent,
+  MatDialogRef,
+  MatDialogTitle,
+} from '@angular/material/dialog';
+import { CreateAdminComponent } from '../create-admin/create-admin.component';
+import { CreateStateComponent } from '../create-state/create-state.component';
 
 @Component({
   selector: 'app-root-admin-dashboard',
@@ -12,8 +23,10 @@ import { ButtonComponent } from '../../../common/button/button.component';
     RibbonComponent,
     MatTabsModule,
     SearchComponent,
+    CreateAdminComponent,
     MatTableModule,
     ButtonComponent,
+    MatDialogModule,
   ],
   templateUrl: './root-admin-dashboard.component.html',
   styleUrl: './root-admin-dashboard.component.scss',
@@ -103,9 +116,41 @@ export class RootAdminDashboardComponent {
   ];
   displayedTaxColumns = ['#', 'name', 'amount', 'actions'];
 
-  ngOnInit() {}
+  constructor(private dialog: MatDialog) {}
 
-  buttonClicked(event: any) {
-    console.log(event, 'from Root Admin Dash');
+  ngOnInit() {
+    // this.openAdminDialog('400ms', '200ms');
   }
+
+  createAdmin(event: any) {
+    console.log(event, 'from Root Admin Dash');
+    this.openAdminDialog('400ms', '200ms');
+  }
+
+  createState(event: any) {
+    console.log(event, 'from Root Admin Dash');
+    this.openStateDialog('400ms', '200ms');
+  }
+
+  openAdminDialog(
+    enterAnimationDuration: string,
+    exitAnimationDuration: string
+  ): void {
+    this.dialog.open(CreateAdminComponent, {
+      enterAnimationDuration,
+      exitAnimationDuration,
+    });
+  }
+
+  openStateDialog(
+    enterAnimationDuration: string,
+    exitAnimationDuration: string
+  ): void {
+    this.dialog.open(CreateStateComponent, {
+      enterAnimationDuration,
+      exitAnimationDuration,
+    });
+  }
+
+  createTax(event: any) {}
 }

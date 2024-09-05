@@ -5,8 +5,8 @@
          <div class="search-and-table-container">
             <div class="search-and-buttons">
                <search></search>
-               <app-button [buttonLabel]="'Create Admin'" (buttonclicked)="buttonClicked($event)"></app-button>
-               <app-button [buttonLabel]="'Create State'" (buttonclicked)="buttonClicked($event)"></app-button>
+               <app-button [buttonLabel]="'Create Admin'" (buttonclicked)="createAdmin($event)"></app-button>
+               <app-button [buttonLabel]="'Create State'" (buttonclicked)="createState($event)"></app-button>
             </div>
             <div class="table-container">
                <mat-table [dataSource]="tableData">
@@ -69,8 +69,7 @@
          <div class="search-and-table-container">
             <div class="search-and-buttons">
                <search></search>
-               <app-button [buttonLabel]="'Create Admin'" (buttonclicked)="buttonClicked($event)"></app-button>
-               <app-button [buttonLabel]="'Create State'" (buttonclicked)="buttonClicked($event)"></app-button>
+               <app-button [buttonLabel]="'Create Admin'" (buttonclicked)="createTax($event)"></app-button>
             </div>
             <div class="table-container">
                <mat-table [dataSource]="tableData">

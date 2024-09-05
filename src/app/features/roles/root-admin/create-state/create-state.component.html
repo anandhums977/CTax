@@ -1,0 +1,39 @@
+<div class="create-admin-container">
+   <div class="head">
+      <div class="title">
+         <p>Create State</p>
+      </div>
+      <div class="close">
+         <p>X</p>
+      </div>
+   </div>
+
+   <div class="forms">
+      <div class="form-field-container">
+         <mat-label for="Name">Name *</mat-label>
+         <mat-form-field style="width: 100%" appearance="outline">
+            <input matInput type="text" id="formControlName=" [ngClass]="{'invalid-input':true}" />
+         </mat-form-field>
+
+         @if (false) {
+         <div class="error">
+            This field required
+         </div>
+         }
+      </div>
+
+      <div class="form-field-container">
+         <mat-label for="Name">Admin *</mat-label>
+         <mat-form-field style="width: 100%" appearance="outline">
+            <input matInput type="text" id="formControlName=" [ngClass]="{'invalid-input':false}" />
+         </mat-form-field>
+
+         @if (false) {
+         <div class="error">
+            This field required
+         </div>
+         }
+      </div>
+   </div>
+   <app-button [buttonLabel]="'Create Admin'" (buttonclicked)="buttonClicked($event)"></app-button>
+</div>

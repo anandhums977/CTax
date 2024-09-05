@@ -1,0 +1,94 @@
+<div class="create-admin-container">
+   <div class="head">
+      <div class="title">
+         <p>Create Admin</p>
+      </div>
+      <div class="close">
+         <p>X</p>
+      </div>
+   </div>
+
+   <div class="forms">
+      <div class="form-field-container">
+         <mat-label for="Name">Name *</mat-label>
+         <mat-form-field style="width: 100%" appearance="outline">
+            <input matInput type="text" id="formControlName=" [ngClass]="{'invalid-input':true}" />
+         </mat-form-field>
+
+         @if (false) {
+         <div class="error">
+            This field required
+         </div>
+         }
+      </div>
+
+      <div class="form-field-container">
+         <mat-label for="Name">Email</mat-label>
+         <mat-form-field style="width: 100%" appearance="outline">
+            <input matInput type="text" id="formControlName=" [ngClass]="{'invalid-input':false}" />
+         </mat-form-field>
+
+         @if (false) {
+         <div class="error">
+            This field required
+         </div>
+         }
+      </div>
+
+      <div class="form-field-container">
+         <mat-label for="Name">Number</mat-label>
+         <mat-form-field style="width: 100%" appearance="outline">
+            <input matInput type="text" id="formControlName=" [ngClass]="{'invalid-input':false}" />
+         </mat-form-field>
+
+         @if (false) {
+         <div class="error">
+            This field required
+         </div>
+         }
+      </div>
+
+      <div class="form-field-container">
+         <mat-label for="AssignedTo">Select State</mat-label>
+         <mat-form-field appearance="outline">
+            <mat-label>Select</mat-label>
+            <mat-select id="AssignedTo" value="1">
+               <mat-option class="disabled-input" value="0">Select</mat-option>
+               <mat-option value="1">Option 1</mat-option>
+               <mat-option value="2">Option 2</mat-option>
+            </mat-select>
+         </mat-form-field>
+
+         @if (false) {
+         <div class="error">Required field</div>
+         }
+      </div>
+
+      <div class="form-field-container">
+         <mat-label for="Name">Username</mat-label>
+         <mat-form-field style="width: 100%" appearance="outline">
+            <input matInput type="text" id="formControlName=" [ngClass]="{'invalid-input':false}" />
+         </mat-form-field>
+
+         @if (false) {
+         <div class="error">
+            This field required
+         </div>
+         }
+      </div>
+
+      <div class="form-field-container">
+         <mat-label for="Name">Password</mat-label>
+         <mat-form-field style="width: 100%" appearance="outline">
+            <input matInput type="text" id="formControlName=" [ngClass]="{'invalid-input':false}" />
+         </mat-form-field>
+
+         @if (false) {
+         <div class="error">
+            This field required
+         </div>
+         }
+      </div>
+   </div>
+   <app-button [buttonLabel]="'Create Admin'" (buttonclicked)="buttonClicked($event)"></app-button>
+</div>
