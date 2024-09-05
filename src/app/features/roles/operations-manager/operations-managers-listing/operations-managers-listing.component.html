@@ -1,71 +1,74 @@
 <div class="search-and-table-container">
   <search></search>
-  <div class="table-container">
-    <mat-table [dataSource]="operationsManagersListing">
+  <div class="table-paginator-container">
+    <div class="table-container">
+      <mat-table [dataSource]="operationsManagersListing">
 
-      <!-- Position Column -->
-      <ng-container matColumnDef="#">
-        <mat-header-cell *matHeaderCellDef> # </mat-header-cell>
-        <mat-cell *matCellDef="let element; let i = index"> {{i + 1}} </mat-cell>
-      </ng-container>
+        <!-- Position Column -->
+        <ng-container matColumnDef="#">
+          <mat-header-cell *matHeaderCellDef> # </mat-header-cell>
+          <mat-cell *matCellDef="let element; let i = index"> {{i + 1}} </mat-cell>
+        </ng-container>
 
-      <!-- Name Column -->
-      <ng-container matColumnDef="name">
-        <mat-header-cell *matHeaderCellDef> NAME </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
-      </ng-container>
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+          <mat-header-cell *matHeaderCellDef> NAME </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+        </ng-container>
 
-      <!-- Zones Name Column -->
-      <ng-container matColumnDef="zones">
-        <mat-header-cell *matHeaderCellDef> ZONES </mat-header-cell>
-        <mat-cell *matCellDef="let element">
-          <div class="zones">
-            {{element.zones}}
-          </div>
-        </mat-cell>
-      </ng-container>
+        <!-- Zones Name Column -->
+        <ng-container matColumnDef="zones">
+          <mat-header-cell *matHeaderCellDef> ZONES </mat-header-cell>
+          <mat-cell *matCellDef="let element">
+            <div class="zones">
+              {{element.zones}}
+            </div>
+          </mat-cell>
+        </ng-container>
 
-      <!-- Number Of Agents Column -->
-      <ng-container matColumnDef="numberOfAgents">
-        <mat-header-cell *matHeaderCellDef> NUMBER OF AGENTS </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.numberOfAgents}} </mat-cell>
-      </ng-container>
+        <!-- Number Of Agents Column -->
+        <ng-container matColumnDef="numberOfAgents">
+          <mat-header-cell *matHeaderCellDef> NUMBER OF AGENTS </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.numberOfAgents}} </mat-cell>
+        </ng-container>
 
-       <!-- Username Of Agents Column -->
-       <ng-container matColumnDef="username">
-        <mat-header-cell *matHeaderCellDef> USERNAME </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.username}} </mat-cell>
-      </ng-container>
+         <!-- Username Of Agents Column -->
+         <ng-container matColumnDef="username">
+          <mat-header-cell *matHeaderCellDef> USERNAME </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.username}} </mat-cell>
+        </ng-container>
 
-      <!-- Password Of Agents Column -->
-      <ng-container matColumnDef="password">
-        <mat-header-cell *matHeaderCellDef> PASSWORD </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.password}} </mat-cell>
-      </ng-container>
+        <!-- Password Of Agents Column -->
+        <ng-container matColumnDef="password">
+          <mat-header-cell *matHeaderCellDef> PASSWORD </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.password}} </mat-cell>
+        </ng-container>
 
-      <!-- Collections Of Agents Column -->
-      <ng-container matColumnDef="collection">
-        <mat-header-cell *matHeaderCellDef> COLLECTIONS </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.collection}} </mat-cell>
-      </ng-container>
+        <!-- Collections Of Agents Column -->
+        <ng-container matColumnDef="collection">
+          <mat-header-cell *matHeaderCellDef> COLLECTIONS </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.collection}} </mat-cell>
+        </ng-container>
 
-      <!-- Actions Column -->
-      <ng-container matColumnDef="actions">
-        <mat-header-cell *matHeaderCellDef> ACTIONS </mat-header-cell>
-        <mat-cell *matCellDef="let element">
-          <button mat-button class="primary">ACCEPT</button>
-          <button mat-button class="warn">REJECT</button>
-        </mat-cell>
-      </ng-container>
+        <!-- Actions Column -->
+        <ng-container matColumnDef="actions">
+          <mat-header-cell *matHeaderCellDef> ACTIONS </mat-header-cell>
+          <mat-cell *matCellDef="let element">
+            <button mat-button class="primary">ACCEPT</button>
+            <button mat-button class="warn">REJECT</button>
+          </mat-cell>
+        </ng-container>
 
-      <mat-header-row *matHeaderRowDef="displayedColumnsOperationsManagersListing"></mat-header-row>
-      <mat-row *matRowDef="let row; columns: displayedColumnsOperationsManagersListing;"></mat-row>
+        <mat-header-row *matHeaderRowDef="displayedColumnsOperationsManagersListing"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumnsOperationsManagersListing;"></mat-row>
 
-    </mat-table>
+      </mat-table>
+    </div>
     <mat-paginator #paginator1 [length]="100"
     [pageSize]="10"
     [pageSizeOptions]="[5, 10, 25, 100]"
     aria-label="Select page">
 </mat-paginator>
   </div>
+
 </div>

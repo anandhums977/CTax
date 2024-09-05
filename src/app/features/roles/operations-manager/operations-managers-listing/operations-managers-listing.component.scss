@@ -15,8 +15,20 @@
     overflow-x: auto;
     margin-top: 20px;
     mat-table.mat-mdc-table.mdc-data-table__table.cdk-table {
-      width: 1000px;
+      width: 1400px;
   }
+  ::ng-deep mat-header-cell.mat-mdc-header-cell.mdc-data-table__header-cell.cdk-header-cell.cdk-column--.mat-column--{
+    max-width: 50px;
+  }
+  ::ng-deep mat-cell.mat-mdc-cell.mdc-data-table__cell.cdk-cell.cdk-column--.mat-column--{
+    max-width: 50px;
+  }
+  ::ng-deep mat-cell.mat-mdc-cell.mdc-data-table__cell.cdk-cell.cdk-column-numberOfAgents.mat-column-numberOfAgents {
+    min-width: 199px;
+}
+::ng-deep mat-header-cell.mat-mdc-header-cell.mdc-data-table__header-cell.cdk-header-cell.cdk-column-numberOfAgents.mat-column-numberOfAgents{
+  min-width: 199px;
+}
     .zones {
       overflow: hidden;
       max-width: 90%;
