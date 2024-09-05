@@ -1,0 +1,15 @@
+@import url('../../../../../common/styles/common-styles.scss');
+
+.mat-mdc-tab-header {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+  width: max-content;
+}
+.search-and-table-container{
+  padding: 30px;
+  .table-container {
+    margin-top: 20px;
+  }
+}

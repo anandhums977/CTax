@@ -1,5 +1,7 @@
 @import url('../../../../common/styles/common-styles.scss');
-
+*{
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 .mat-mdc-tab-header {
   display: flex;
   overflow: hidden;
@@ -8,5 +10,14 @@
   width: max-content;
 }
 .search-and-table-container{
-  padding: 20px;
+  padding: 30px;
+  .table-container {
+    margin-top: 20px;
+    ::ng-deep mat-header-cell.mat-mdc-header-cell.mdc-data-table__header-cell.cdk-header-cell.cdk-column--.mat-column--{
+      max-width: 50px;
+    }
+    ::ng-deep mat-cell.mat-mdc-cell.mdc-data-table__cell.cdk-cell.cdk-column--.mat-column--{
+      max-width: 50px;
+    }
+  }
 }
