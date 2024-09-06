@@ -1,1 +1,82 @@
-<p>create-tax works!</p>
+<div class="create-admin-container">
+   <div class="head">
+      <div class="back-button-container" (click)="goBack()">
+         <svg class="back-button" id="Component_43_2" data-name="Component 43 – 2" xmlns="http://www.w3.org/2000/svg"
+            width="30" height="30" viewBox="0 0 30 30">
+            <g id="Rectangle_155" data-name="Rectangle 155" fill="#f5f6fa" stroke="#bbbfc9" stroke-width="1">
+               <rect width="30" height="30" rx="15" stroke="none" />
+               <rect x="0.5" y="0.5" width="29" height="29" rx="14.5" fill="none" />
+            </g>
+            <path id="Path_682" data-name="Path 682" d="M7,10l6.071,5.91L19.142,10"
+               transform="translate(27.955 1.929) rotate(90)" fill="none" stroke="#bbbfc9" stroke-width="1.5" />
+         </svg>
+
+         <div class="back-button-name">
+            Back
+         </div>
+      </div>
+   </div>
+
+   <div class="forms">
+      <div class="form-field-container">
+         <mat-label for="Name">Name *</mat-label>
+         <mat-form-field style="width: 100%" appearance="outline">
+            <input matInput type="text" id="formControlName=" [ngClass]="{'invalid-input':true}" />
+         </mat-form-field>
+
+         @if (false) {
+         <div class="error">
+            This field required
+         </div>
+         }
+      </div>
+
+      <div class="form-field-container">
+         <mat-label for="Name">Type Name *</mat-label>
+         <mat-form-field appearance="outline">
+            <mat-label>Select</mat-label>
+            <mat-select id="AssignedTo" value="1">
+               <mat-option class="disabled-input" value="0">Select</mat-option>
+               <mat-option value="1">Hourly</mat-option>
+               <mat-option value="2">Daily</mat-option>
+               <mat-option value="2">Weekly</mat-option>
+               <mat-option value="2">Monthly</mat-option>
+            </mat-select>
+         </mat-form-field>
+
+         @if (false) {
+         <div class="error">Required field</div>
+         }
+      </div>
+
+      <div class="form-field-container">
+         <mat-label for="AssignedTo">Select State *</mat-label>
+         <mat-form-field appearance="outline">
+            <mat-label>Select</mat-label>
+            <mat-select id="AssignedTo" value="1">
+               <mat-option class="disabled-input" value="0">Select</mat-option>
+               <mat-option value="1">Option 1</mat-option>
+               <mat-option value="2">Option 2</mat-option>
+            </mat-select>
+         </mat-form-field>
+
+         @if (false) {
+         <div class="error">Required field</div>
+         }
+      </div>
+
+      <div class="form-field-container">
+         <mat-label for="Name">Amount * </mat-label>
+         <mat-form-field style="width: 100%" appearance="outline">
+            <input matInput type="text" id="formControlName=" [ngClass]="{'invalid-input':false}" />
+         </mat-form-field>
+
+         @if (false) {
+         <div class="error">
+            This field required
+         </div>
+         }
+      </div>
+   </div>
+   <app-button [buttonLabel]="'Create Admin'" (buttonclicked)="buttonClicked($event)"></app-button>
+</div>

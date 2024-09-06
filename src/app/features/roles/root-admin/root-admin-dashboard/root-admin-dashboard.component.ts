@@ -15,6 +15,7 @@ import {
 } from '@angular/material/dialog';
 import { CreateAdminComponent } from '../create-admin/create-admin.component';
 import { CreateStateComponent } from '../create-state/create-state.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root-admin-dashboard',
@@ -116,7 +117,7 @@ export class RootAdminDashboardComponent {
   ];
   displayedTaxColumns = ['#', 'name', 'amount', 'actions'];
 
-  constructor(private dialog: MatDialog) {}
+  constructor(private dialog: MatDialog, private router: Router) {}
 
   ngOnInit() {
     // this.openAdminDialog('400ms', '200ms');
@@ -152,5 +153,7 @@ export class RootAdminDashboardComponent {
     });
   }
 
-  createTax(event: any) {}
+  createTax(event: any) {
+    this.router.navigateByUrl('create-tax');
+  }
 }
