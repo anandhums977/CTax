@@ -6,7 +6,11 @@
 <mat-tab-group>
   <mat-tab label="TCA Approval">
     <div class="search-and-table-container">
-      <search></search>
+      <div class="search-and-filter">
+        <img [matMenuTriggerFor]="filter" src="../../../../../assets/common/filter.svg" alt="">
+        <search></search>
+      </div>
+
       <div class="table-paginator-container">
         <div class="table-container">
           <mat-table [dataSource]="tcaApprovalData">
@@ -55,6 +59,7 @@
               *matHeaderRowDef="displayedColumnsTcaApprovalData"
             ></mat-header-row>
             <mat-row
+            (click)="openPersonDeatilsDialog(row)"
               *matRowDef="let row; columns: displayedColumnsTcaApprovalData"
             ></mat-row>
           </mat-table>
@@ -123,6 +128,7 @@
               *matHeaderRowDef="displayedColumnsTcaActivationData"
             ></mat-header-row>
             <mat-row
+            (click)="openPersonDeatilsDialog(row)"
               *matRowDef="let row; columns: displayedColumnsTcaActivationData"
             ></mat-row>
           </mat-table>
@@ -140,3 +146,23 @@
     </div>
   </mat-tab>
 </mat-tab-group>
+
+<!-- FILTER MENU -->
+<mat-menu #filter="matMenu" class="filter">
+  <div class="filter">
+    <!-- <div class="filter-type">
+      Stand
+    </div> -->
+    <div class="filter-options">
+      <mat-form-field appearance="outline" (click)="$event.stopPropagation()">
+        <mat-label>Stand</mat-label>
+        <mat-select multiple>
+          @for (stand of standsList; track stand) {
+            <mat-option [value]="stand.id">{{stand.name}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+
+</mat-menu>
