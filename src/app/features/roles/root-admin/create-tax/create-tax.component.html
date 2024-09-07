@@ -17,11 +17,11 @@
       </div>
    </div>
 
-   <div class="forms">
+   <form class="forms" [formGroup]="taxForm">
       <div class="form-field-container">
          <mat-label for="Name">Name *</mat-label>
          <mat-form-field style="width: 100%" appearance="outline">
-            <input matInput type="text" [ngClass]="{'invalid-input':true}" />
+            <input matInput type="text" formControlName="name" [ngClass]="{'invalid-input':false}" />
          </mat-form-field>
 
          @if (false) {
@@ -35,7 +35,7 @@
          <mat-label for="selectType">Type Name *</mat-label>
          <mat-form-field appearance="outline">
             <mat-label>Select</mat-label>
-            <mat-select id="selectType" value="1">
+            <mat-select id="selectType" value="1" formControlName="type">
                <mat-option class="disabled-input" value="0">Select</mat-option>
                <mat-option value="1">Hourly</mat-option>
                <mat-option value="2">Daily</mat-option>
@@ -53,7 +53,7 @@
          <mat-label for="selectState">Select State *</mat-label>
          <mat-form-field appearance="outline">
             <mat-label>Select</mat-label>
-            <mat-select id="selectState" value="1">
+            <mat-select id="selectState" value="1" formControlName="state">
                <mat-option class="disabled-input" value="0">Select</mat-option>
                <mat-option value="1">Option 1</mat-option>
                <mat-option value="2">Option 2</mat-option>
@@ -68,7 +68,7 @@
       <div class="form-field-container">
          <mat-label for="Name">Amount * </mat-label>
          <mat-form-field style="width: 100%" appearance="outline">
-            <input matInput type="text" [ngClass]="{'invalid-input':false}" />
+            <input matInput type="text" formControlName="amount" [ngClass]="{'invalid-input':false}" />
          </mat-form-field>
 
          @if (false) {
@@ -77,6 +77,6 @@
          </div>
          }
       </div>
-   </div>
+   </form>
    <app-button [buttonLabel]="'Create Admin'" (buttonclicked)="buttonClicked($event)"></app-button>
 </div>

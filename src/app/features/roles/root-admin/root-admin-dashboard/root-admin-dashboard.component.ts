@@ -5,6 +5,7 @@ import { MatTableModule } from '@angular/material/table';
 import { SearchComponent } from '../../../../common/search/search.component';
 import { ButtonComponent } from '../../../../common/button/button.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import {
   MatDialog,
   MatDialogActions,
@@ -28,6 +29,8 @@ import { Router } from '@angular/router';
     MatTableModule,
     ButtonComponent,
     MatDialogModule,
+    MatPaginator,
+    MatPaginatorModule,
   ],
   templateUrl: './root-admin-dashboard.component.html',
   styleUrl: './root-admin-dashboard.component.scss',
