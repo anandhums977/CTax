@@ -62,6 +62,10 @@ mat-table.mat-mdc-table {
 ::ng-deep .mat-mdc-paginator-container {
   border-radius: 8px;
 }
+::ng-deep .mat-mdc-paginator-page-size {
+  display: flex!important;
+  align-items: center!important;
+}
 ::ng-deep .mdc-list-item--selected.mat-mdc-option-active .mdc-list-item__primary-text {
   color: #00ab99 !important;
 }
