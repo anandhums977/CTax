@@ -8,6 +8,7 @@ import {Dialog, DialogModule} from '@angular/cdk/dialog';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { CreateOperationsManagerComponent } from '../create-operations-manager/create-operations-manager.component';
 @Component({
   selector: 'app-operations-managers-listing',
   standalone: true,
@@ -130,6 +131,11 @@ export class OperationsManagersListingComponent {
     this.dialog.open(PersonDetailsComponent, {
       minWidth: '300px',
       data: data
+    });
+  }
+  CreateOperationsManagerDialog() {
+    this.dialog.open(CreateOperationsManagerComponent, {
+      minWidth: '300px',
     });
   }
 }
