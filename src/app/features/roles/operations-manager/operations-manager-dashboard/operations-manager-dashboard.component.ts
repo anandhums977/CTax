@@ -4,7 +4,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { SearchComponent } from '../../../../common/search/search.component';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
-import {Dialog, DIALOG_DATA, DialogModule} from '@angular/cdk/dialog';
+import {Dialog, DialogModule} from '@angular/cdk/dialog';
 @Component({
   selector: 'app-operations-manager-dashboard',
   standalone: true,

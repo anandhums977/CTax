@@ -11,29 +11,54 @@
 }
 .search-and-table-container {
   padding: 30px;
-  .table-container {
-    overflow-x: auto;
-    margin-top: 20px;
-    mat-table.mat-mdc-table.mdc-data-table__table.cdk-table {
-      width: 1400px;
-  }
-  ::ng-deep mat-header-cell.mat-mdc-header-cell.mdc-data-table__header-cell.cdk-header-cell.cdk-column--.mat-column--{
-    max-width: 50px;
-  }
-  ::ng-deep mat-cell.mat-mdc-cell.mdc-data-table__cell.cdk-cell.cdk-column--.mat-column--{
-    max-width: 50px;
-  }
-  ::ng-deep mat-cell.mat-mdc-cell.mdc-data-table__cell.cdk-cell.cdk-column-numberOfAgents.mat-column-numberOfAgents {
-    min-width: 199px;
-}
-::ng-deep mat-header-cell.mat-mdc-header-cell.mdc-data-table__header-cell.cdk-header-cell.cdk-column-numberOfAgents.mat-column-numberOfAgents{
-  min-width: 199px;
-}
-    .zones {
-      overflow: hidden;
-      max-width: 90%;
-      white-space: nowrap;
-      text-overflow: ellipsis;
+  .search-and-create{
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    search{
+      width: 100%;
+    }
+    app-button{
+      min-width: 142px;
     }
   }
+  .table-paginator-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    .table-container {
+      overflow-x: auto;
+      margin-top: 20px;
+      mat-table.mat-mdc-table.mdc-data-table__table.cdk-table {
+        min-width: 1400px;
+    }
+    ::ng-deep mat-header-cell.mat-mdc-header-cell.mdc-data-table__header-cell.cdk-header-cell.cdk-column--.mat-column--{
+      max-width: 50px;
+    }
+    ::ng-deep mat-cell.mat-mdc-cell.mdc-data-table__cell.cdk-cell.cdk-column--.mat-column--{
+      max-width: 50px;
+    }
+    ::ng-deep mat-cell.mat-mdc-cell.mdc-data-table__cell.cdk-cell.cdk-column-numberOfAgents.mat-column-numberOfAgents {
+      min-width: 199px;
+  }
+  ::ng-deep mat-header-cell.mat-mdc-header-cell.mdc-data-table__header-cell.cdk-header-cell.cdk-column-numberOfAgents.mat-column-numberOfAgents{
+    min-width: 199px;
+  }
+      .zones {
+        overflow: hidden;
+        max-width: 90%;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+
+}
+::ng-deep person-details{
+  border: none !important;
+  outline: none !important;
+}
+::ng-deep .cdk-dialog-container,::ng-deep .cdk-overlay-pane{
+  border: none !important;
+  outline: none !important;
 }
