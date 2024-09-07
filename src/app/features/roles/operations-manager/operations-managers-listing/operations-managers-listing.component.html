@@ -1,6 +1,13 @@
 <div class="search-and-table-container">
   <div class="search-and-create">
-    <search></search>
+    <div class="search-and-filter">
+      <img
+        [matMenuTriggerFor]="tcaActivationFilter"
+        src="../../../../../assets/common/filter.svg"
+        alt=""
+      />
+      <search></search>
+    </div>
     <app-button buttonLabel="+ Create Manager"></app-button>
   </div>
 
@@ -83,3 +90,44 @@
   </div>
 
 </div>
+
+<!-- OPERATIONS MANAGER LISTING FILTER MENU -->
+<mat-menu #tcaActivationFilter="matMenu" class="filter">
+  <div class="filter-container">
+    <div class="filter-title">
+      Filter
+    </div>
+    <div class="filter">
+      <div class="filter-type">Stand</div>
+      <div class="filter-options">
+        <mat-form-field appearance="outline" (click)="$event.stopPropagation()">
+          <!-- <mat-label>Stand</mat-label> -->
+          <mat-select multiple>
+            @for (stand of standsList; track stand) {
+            <mat-option [value]="stand.id">{{ stand.name }}</mat-option>
+            }
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+    </div>
+    <div class="filter">
+      <div class="filter-type">Stand</div>
+      <div class="filter-options">
+        <mat-form-field appearance="outline" (click)="$event.stopPropagation()">
+          <!-- <mat-label>Stand</mat-label> -->
+          <mat-select multiple>
+            @for (stand of standsList; track stand) {
+            <mat-option [value]="stand.id">{{ stand.name }}</mat-option>
+            }
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+    </div>
+    <div class="buttons-contaner">
+      <app-button buttonLabel="Filter"></app-button>
+      <app-button buttonLabel="Clear" buttonType="clear"></app-button>
+    </div>
+  </div>
+</mat-menu>

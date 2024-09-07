@@ -9,7 +9,7 @@ import { PersonDetailsComponent } from '../../../../common/person-details/person
 import {MatMenuModule} from '@angular/material/menu';
 import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
-
+import { ButtonComponent } from '../../../../common/button/button.component';
 @Component({
   selector: 'app-operations-manager-dashboard',
   standalone: true,
@@ -17,6 +17,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     RibbonComponent,
     MatPaginatorModule,
     MatSelectModule,
+    ButtonComponent,
     MatFormFieldModule,
     MatTabsModule,
     SearchComponent,

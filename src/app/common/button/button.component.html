@@ -1,3 +1,3 @@
 <div class="main">
-   <button (click)="onButtonClick($event)">{{buttonLabel}}</button>
+   <button (click)="onButtonClick($event)" [ngClass]="{'clear': (buttonType=='clear')}">{{buttonLabel}}</button>
 </div>
