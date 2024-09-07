@@ -1,12 +1,12 @@
 @import url("../../../../common/styles/common-styles.scss");
 
 .create-admin-container {
-  * {
-    padding: 0;
-    margin: 0;
-    font-family: Roboto;
-  }
+  // * {
+  //   padding: 0;
+  //   margin: 0;
+  // }
 
+  font-family: Roboto;
   $main-green: #00aa98;
 
   .just-center {
@@ -20,7 +20,6 @@
   }
 
   height: fit-content;
-  //   background: #fff;
   margin: 20px;
   .head {
     .back-button-container {
@@ -52,5 +51,11 @@
     grid-template-columns: 1fr 1fr;
     gap: 10px;
     padding: 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  .forms {
+    grid-template-columns: 1fr !important;
   }
 }
