@@ -73,67 +73,70 @@
   <mat-tab label="TCA Activation">
     <div class="search-and-table-container">
       <search></search>
-      <div class="table-container">
-        <mat-table [dataSource]="tcaActivationData">
-          <!-- Position Column -->
-          <ng-container matColumnDef="#">
-            <mat-header-cell *matHeaderCellDef> # </mat-header-cell>
-            <mat-cell *matCellDef="let element; let i = index">
-              {{ i + 1 }}
-            </mat-cell>
-          </ng-container>
+      <div class="table-paginator-container">
+        <div class="table-container">
+          <mat-table [dataSource]="tcaActivationData">
+            <!-- Position Column -->
+            <ng-container matColumnDef="#">
+              <mat-header-cell *matHeaderCellDef> # </mat-header-cell>
+              <mat-cell *matCellDef="let element; let i = index">
+                {{ i + 1 }}
+              </mat-cell>
+            </ng-container>
 
-          <!-- Name Column -->
-          <ng-container matColumnDef="name">
-            <mat-header-cell *matHeaderCellDef> NAME </mat-header-cell>
-            <mat-cell *matCellDef="let element"> {{ element.name }} </mat-cell>
-          </ng-container>
+            <!-- Name Column -->
+            <ng-container matColumnDef="name">
+              <mat-header-cell *matHeaderCellDef> NAME </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{ element.name }} </mat-cell>
+            </ng-container>
 
-          <!-- Admin Name Column -->
-          <ng-container matColumnDef="adminName">
-            <mat-header-cell *matHeaderCellDef> ADMIN NAME </mat-header-cell>
-            <mat-cell *matCellDef="let element">
-              {{ element.adminName }}
-            </mat-cell>
-          </ng-container>
+            <!-- Admin Name Column -->
+            <ng-container matColumnDef="adminName">
+              <mat-header-cell *matHeaderCellDef> ADMIN NAME </mat-header-cell>
+              <mat-cell *matCellDef="let element">
+                {{ element.adminName }}
+              </mat-cell>
+            </ng-container>
 
-          <!-- Stand Column -->
-          <ng-container matColumnDef="stand">
-            <mat-header-cell *matHeaderCellDef> STAND </mat-header-cell>
-            <mat-cell *matCellDef="let element"> {{ element.stand }} </mat-cell>
-          </ng-container>
+            <!-- Stand Column -->
+            <ng-container matColumnDef="stand">
+              <mat-header-cell *matHeaderCellDef> STAND </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{ element.stand }} </mat-cell>
+            </ng-container>
 
-          <!-- POS Column -->
-          <ng-container matColumnDef="pos">
-            <mat-header-cell *matHeaderCellDef> POS </mat-header-cell>
-            <mat-cell *matCellDef="let element"> {{ element.pos }} </mat-cell>
-          </ng-container>
+            <!-- POS Column -->
+            <ng-container matColumnDef="pos">
+              <mat-header-cell *matHeaderCellDef> POS </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{ element.pos }} </mat-cell>
+            </ng-container>
 
-          <!-- Actions Column -->
-          <ng-container matColumnDef="actions">
-            <mat-header-cell *matHeaderCellDef> ACTIONS </mat-header-cell>
-            <mat-cell *matCellDef="let element">
-              <button mat-button class="primary">ACCEPT</button>
-              <button mat-button class="warn">REJECT</button>
-            </mat-cell>
-          </ng-container>
+            <!-- Actions Column -->
+            <ng-container matColumnDef="actions">
+              <mat-header-cell *matHeaderCellDef> ACTIONS </mat-header-cell>
+              <mat-cell *matCellDef="let element">
+                <button mat-button class="primary">ACCEPT</button>
+                <button mat-button class="warn">REJECT</button>
+              </mat-cell>
+            </ng-container>
 
-          <mat-header-row
-            *matHeaderRowDef="displayedColumnsTcaActivationData"
-          ></mat-header-row>
-          <mat-row
-            *matRowDef="let row; columns: displayedColumnsTcaActivationData"
-          ></mat-row>
-        </mat-table>
-        <mat-paginator
-          #paginator2
-          [length]="100"
-          [pageSize]="10"
-          [pageSizeOptions]="[5, 10, 25, 100]"
-          aria-label="Select page"
-        >
-        </mat-paginator>
+            <mat-header-row
+              *matHeaderRowDef="displayedColumnsTcaActivationData"
+            ></mat-header-row>
+            <mat-row
+              *matRowDef="let row; columns: displayedColumnsTcaActivationData"
+            ></mat-row>
+          </mat-table>
+
+        </div>
       </div>
+      <mat-paginator
+      #paginator2
+      [length]="100"
+      [pageSize]="10"
+      [pageSizeOptions]="[5, 10, 25, 100]"
+      aria-label="Select page"
+    >
+    </mat-paginator>
     </div>
   </mat-tab>
 </mat-tab-group>
