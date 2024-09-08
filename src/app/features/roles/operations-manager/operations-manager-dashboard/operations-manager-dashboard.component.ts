@@ -146,14 +146,17 @@ export class OperationsManagerDashboardComponent {
     {
       name: 'Agent Admins',
       value: '15',
+      type:1,
     },
     {
       name: 'POS',
       value: '12517',
+      type:1,
     },
     {
       name: 'Total Amount',
       value: '2500$',
+      type:2,
     },
   ];
 

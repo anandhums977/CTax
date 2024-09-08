@@ -50,14 +50,17 @@ export class TaxCollectionDataComponent {
     {
       name: 'Total Stands',
       value: '5',
+      type:1,
     },
     {
       name: 'Total Tickets',
       value: '25',
+      type:1,
     },
     {
       name: 'Total Collection',
       value: '2500',
+      type:2,
     },
   ];
   taxCollectionData = new MatTableDataSource([
