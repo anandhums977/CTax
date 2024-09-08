@@ -32,11 +32,7 @@ export class CreateStateComponent {
   constructor(public dialogRef: DialogRef, private fb: FormBuilder) {
     this.stateForm = this.fb.group({
       name: ['', Validators.required],
-      // email: ['', [Validators.required, Validators.email]],
-      // number: [''],
-      state: ['', Validators.required],
-      // username: ['', Validators.required],
-      // password: ['', Validators.required],
+      admin: ['', Validators.required],
     });
   }
 

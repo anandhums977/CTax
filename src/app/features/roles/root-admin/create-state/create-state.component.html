@@ -27,11 +27,11 @@
             <div class="right-panel">
                <div class="form-field-container">
                   <mat-form-field appearance="outline" class="full-width">
-                     <mat-label>Select State</mat-label>
-                     <mat-select formControlName="state">
-                        <mat-option value="1">State 1</mat-option>
-                        <mat-option value="2">State 2</mat-option>
-                        <mat-option value="3">State 3</mat-option>
+                     <mat-label>Select Admin</mat-label>
+                     <mat-select formControlName="admin">
+                        <mat-option value="1">Admin 1</mat-option>
+                        <mat-option value="2">Admin 2</mat-option>
+                        <mat-option value="3">Admin 3</mat-option>
                      </mat-select>
                   </mat-form-field>
                   <mat-error *ngIf="stateForm.get('state')?.hasError('required')">State is
