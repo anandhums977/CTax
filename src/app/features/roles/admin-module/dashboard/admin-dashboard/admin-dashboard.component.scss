@@ -1,5 +1,7 @@
 @import url('../../../../../common/styles/common-styles.scss');
-
+*{
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 .mat-mdc-tab-header {
   display: flex;
   overflow: hidden;
@@ -9,7 +11,34 @@
 }
 .search-and-table-container{
   padding: 30px;
-  .table-container {
-    margin-top: 20px;
-  }
+  .search-and-filter {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    img{
+      cursor: pointer;
+    }
+    search{
+      width: 100%;
+    }
+}
+  .table-paginator-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    .table-container {
+      overflow-x: auto;
+      mat-table.mat-mdc-table.mdc-data-table__table.cdk-table {
+        min-width: 1000px;
+    }
+      margin-top: 20px;
+      ::ng-deep mat-header-cell.mat-mdc-header-cell.mdc-data-table__header-cell.cdk-header-cell.cdk-column--.mat-column--{
+        max-width: 50px;
+      }
+      ::ng-deep mat-cell.mat-mdc-cell.mdc-data-table__cell.cdk-cell.cdk-column--.mat-column--{
+        max-width: 50px;
+      }
+    }
+}
+
 }

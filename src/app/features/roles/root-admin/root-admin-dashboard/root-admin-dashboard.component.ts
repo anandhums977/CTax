@@ -42,14 +42,17 @@ export class RootAdminDashboardComponent {
     {
       name: 'Admins',
       value: '15',
+      type:1,
     },
     {
       name: 'States',
       value: '17',
+      type:1,
     },
     {
       name: 'Taxes',
       value: '23',
+      type:1,
     },
   ];
 

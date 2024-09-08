@@ -6,6 +6,8 @@
   }
 
   $main-green: #00aa98;
+  $main-grey: #eeeeee;
+
 
   .just-center {
     display: flex;
@@ -24,11 +26,17 @@
     border-radius: 8px;
     background: $main-green;
     color: #fff;
+    font-weight: 500;
+    width: max-content;
     cursor: pointer;
     transition: all 0.5s;
 
     &:hover {
       background: #029082;
     }
+  }
+  button.clear{
+    background:  $main-grey;
+    color: #000000;
   }
 }

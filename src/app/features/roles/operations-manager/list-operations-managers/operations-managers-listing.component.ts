@@ -5,7 +5,10 @@ import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { ButtonComponent } from '../../../../common/button/button.component';
 import { PersonDetailsComponent } from '../../../../common/person-details/person-details.component';
 import {Dialog, DialogModule} from '@angular/cdk/dialog';
-
+import {MatMenuModule} from '@angular/material/menu';
+import {MatSelectModule} from '@angular/material/select';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { CreateOperationsManagerComponent } from '../create-operations-manager/create-operations-manager.component';
 @Component({
   selector: 'app-operations-managers-listing',
   standalone: true,
@@ -14,13 +17,30 @@ import {Dialog, DialogModule} from '@angular/cdk/dialog';
     SearchComponent,
     MatPaginatorModule,
     ButtonComponent,
-    DialogModule
+    MatSelectModule,
+    DialogModule,
+    MatFormFieldModule,
+    MatMenuModule
   ],
   templateUrl: './operations-managers-listing.component.html',
   styleUrl: './operations-managers-listing.component.scss',
 })
 export class OperationsManagersListingComponent {
   dialog = inject(Dialog);
+  standsList =[
+    {
+    id:1,
+    name:'Stand 1'
+  },
+  {
+    id:2,
+    name:'Stand 2'
+  },
+  {
+    id:3,
+    name:'Stand 3'
+  }
+]
   operationsManagersListing = new MatTableDataSource([
     {
       id: 1,
@@ -111,6 +131,11 @@ export class OperationsManagersListingComponent {
     this.dialog.open(PersonDetailsComponent, {
       minWidth: '300px',
       data: data
+    });
+  }
+  CreateOperationsManagerDialog() {
+    this.dialog.open(CreateOperationsManagerComponent, {
+      minWidth: '300px',
     });
   }
 }

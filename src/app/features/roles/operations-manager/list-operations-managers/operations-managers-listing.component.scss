@@ -15,9 +15,17 @@
     display: flex;
     width: 100%;
     gap: 10px;
-    search{
+    .search-and-filter {
+      display: flex;
       width: 100%;
-    }
+      align-items: center;
+      img{
+        cursor: pointer;
+      }
+      search{
+        width: 100%;
+      }
+  }
     app-button{
       min-width: 142px;
     }
@@ -53,12 +61,4 @@
     }
   }
 
-}
-::ng-deep person-details{
-  border: none !important;
-  outline: none !important;
-}
-::ng-deep .cdk-dialog-container,::ng-deep .cdk-overlay-pane{
-  border: none !important;
-  outline: none !important;
 }
