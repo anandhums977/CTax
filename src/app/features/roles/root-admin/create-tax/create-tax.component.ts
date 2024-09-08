@@ -31,9 +31,9 @@ export class CreateTaxComponent {
   constructor(private fb: FormBuilder, private router: Router) {
     this.taxForm = this.fb.group({
       name: ['', Validators.required],
-      taxType: [''],
-      password: ['', Validators.required],
       state: [''],
+      taxType: [''],
+      amount: ['', Validators.required],
     });
   }
 
