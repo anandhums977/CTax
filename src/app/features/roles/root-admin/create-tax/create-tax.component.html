@@ -12,71 +12,72 @@
          </svg>
 
          <div class="back-button-name">
-            Back
+            Create New Tax
          </div>
       </div>
    </div>
 
-   <form class="forms" [formGroup]="taxForm">
-      <div class="form-field-container">
-         <mat-label for="Name">Name *</mat-label>
-         <mat-form-field style="width: 100%" appearance="outline">
-            <input matInput type="text" formControlName="name" [ngClass]="{'invalid-input':false}" />
-         </mat-form-field>
+   <div class="dialog-container">
+      <div class="dialog-content">
+         <form class="form-container" [formGroup]="taxForm" (ngSubmit)="onSubmit()">
+            <div class="form-grid">
+               <!-- Left Panel -->
+               <div class="left-panel">
+                  <div class="form-field-container">
+                     <mat-form-field appearance="outline" class="full-width">
+                        <mat-label>Name</mat-label>
+                        <input matInput formControlName="name">
+                     </mat-form-field>
+                     <mat-error *ngIf="taxForm.get('name')?.hasError('required')">Name is
+                        required</mat-error>
+                  </div>
 
-         @if (false) {
-         <div class="error">
-            This field required
-         </div>
-         }
+                  <div class="form-field-container">
+                     <mat-form-field appearance="outline" class="full-width">
+                        <mat-label>Select State</mat-label>
+                        <mat-select formControlName="state">
+                           <mat-option value="1">State 1</mat-option>
+                           <mat-option value="2">State 2</mat-option>
+                           <mat-option value="3">State 3</mat-option>
+                        </mat-select>
+                     </mat-form-field>
+                     <mat-error *ngIf="taxForm.get('state')?.hasError('required')">State is
+                        required</mat-error>
+                  </div>
+               </div>
+
+               <!-- Right Panel -->
+               <div class="right-panel">
+                  <div class="form-field-container">
+                     <mat-form-field appearance="outline" class="full-width">
+                        <mat-label>Tax Type</mat-label>
+                        <mat-select formControlName="taxType">
+                           <mat-option value="1">Tax Type 1</mat-option>
+                           <mat-option value="2">Tax Type 2</mat-option>
+                           <mat-option value="3">Tax Type 3</mat-option>
+                        </mat-select>
+                     </mat-form-field>
+                     <mat-error *ngIf="taxForm.get('taxType')?.hasError('required')">Tax type is
+                        required</mat-error>
+                  </div>
+
+                  <div class="form-field-container">
+                     <mat-form-field appearance="outline" class="full-width">
+                        <mat-label>Amount</mat-label>
+                        <input matInput formControlName="amount">
+                     </mat-form-field>
+                     <mat-error *ngIf="taxForm.get('amount')?.hasError('required')">Amount is
+                        required</mat-error>
+                  </div>
+               </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="button-container">
+               <app-button class="create-button" buttonLabel="Create Tax"></app-button>
+            </div>
+         </form>
       </div>
+   </div>
 
-      <div class="form-field-container">
-         <mat-label for="selectType">Type Name *</mat-label>
-         <mat-form-field appearance="outline">
-            <mat-label>Select</mat-label>
-            <mat-select id="selectType" value="1" formControlName="type">
-               <mat-option class="disabled-input" value="0">Select</mat-option>
-               <mat-option value="1">Hourly</mat-option>
-               <mat-option value="2">Daily</mat-option>
-               <mat-option value="2">Weekly</mat-option>
-               <mat-option value="2">Monthly</mat-option>
-            </mat-select>
-         </mat-form-field>
-
-         @if (false) {
-         <div class="error">Required field</div>
-         }
-      </div>
-
-      <div class="form-field-container">
-         <mat-label for="selectState">Select State *</mat-label>
-         <mat-form-field appearance="outline">
-            <mat-label>Select</mat-label>
-            <mat-select id="selectState" value="1" formControlName="state">
-               <mat-option class="disabled-input" value="0">Select</mat-option>
-               <mat-option value="1">Option 1</mat-option>
-               <mat-option value="2">Option 2</mat-option>
-            </mat-select>
-         </mat-form-field>
-
-         @if (false) {
-         <div class="error">Required field</div>
-         }
-      </div>
-
-      <div class="form-field-container">
-         <mat-label for="Name">Amount * </mat-label>
-         <mat-form-field style="width: 100%" appearance="outline">
-            <input matInput type="text" formControlName="amount" [ngClass]="{'invalid-input':false}" />
-         </mat-form-field>
-
-         @if (false) {
-         <div class="error">
-            This field required
-         </div>
-         }
-      </div>
-   </form>
-   <app-button [buttonLabel]="'Create Admin'" (buttonclicked)="buttonClicked($event)"></app-button>
 </div>

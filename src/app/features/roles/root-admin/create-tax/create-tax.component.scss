@@ -1,24 +1,6 @@
-@import url("../../../../common/styles/common-styles.scss");
+@import url("../../../../common/styles/create-page.scss");
 
 .create-admin-container {
-  // * {
-  //   padding: 0;
-  //   margin: 0;
-  // }
-
-  font-family: Roboto;
-  $main-green: #00aa98;
-
-  .just-center {
-    display: flex;
-    align-items: center;
-  }
-
-  .full-center {
-    @extend .just-center;
-    justify-content: center;
-  }
-
   height: fit-content;
   margin: 20px;
   .head {
@@ -46,49 +28,7 @@
     }
   }
 
-  .forms {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    padding: 15px;
+  .dialog-container {
+    width: unset !important;
   }
-}
-
-@media (max-width: 600px) {
-  .forms {
-    grid-template-columns: 1fr !important;
-  }
-}
-
-// ::ng-deep .mat-form-field-infix {
-//   width: auto !important;
-//   border: none !important;
-//   padding: 0px !important;
-// }
-
-// ::ng-deep .mat-mdc-form-field-appearance-outline .mat-form-field-infix {
-//   padding: 9px 0 9px 0;
-//   width: auto !important;
-//   border: none !important;
-// }
-
-// ::ng-deep .mat-form-field-infix {
-//   border-top: 0.54375em solid rgba(0, 0, 0, 0) !important;
-// }
-
-// PENDING TO UPDATE MATINPUT STYLE ISSUES
-
-::ng-deep
-  .mat-mdc-text-field-wrapper.mdc-text-field--outlined
-  .mat-mdc-form-field-infix {
-  // padding-top: 10px !important;
-  border: none !important;
-}
-
-::ng-deep .mat-mdc-form-field-outline {
-  border: none;
-}
-
-::ng-deep .mat-mdc-form-field-outline-thick {
-  border: none;
 }
