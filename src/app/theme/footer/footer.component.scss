@@ -48,21 +48,18 @@
           color: #fff;
         }
 
-        .sub-head {
-          margin: 0;
-          padding-bottom: 5px;
-          margin-bottom: 7px;
-          border-bottom: 1px solid #56585c;
-        }
-
         .links {
           padding-inline-start: 10px;
           .each-link {
             cursor: pointer;
+            margin-bottom: 7px;
+            padding-bottom: 3px;
+            border-bottom: 1px solid #56585c00;
             transition: all 0.4s;
 
             &:hover {
               color: $hover-grey;
+              border-bottom: 1px solid #56585c;
             }
           }
         }
@@ -93,18 +90,29 @@
       }
     }
   }
+
+  @media (max-width: 550px) {
+    .footer-body {
+      flex-direction: column;
+
+      .logo-section {
+        margin-bottom: 10px;
+      }
+
+      .main-links {
+        padding-inline-start: 0;
+      }
+    }
+  }
 }
 
-@media (max-width: 550px) {
-  .footer-body {
-    flex-direction: column;
+.powerd {
+  padding: 15px;
+  background: #1a1919;
+  color: #56585c;
+  font-size: 15px;
 
-    .logo-section {
-      margin-bottom: 10px;
-    }
-
-    .main-links {
-      padding-inline-start: 0;
-    }
+  p {
+    margin: 0;
   }
 }
