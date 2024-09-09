@@ -17,6 +17,7 @@ import {
 import { CreateAdminComponent } from '../create-admin/create-admin.component';
 import { CreateStateComponent } from '../create-state/create-state.component';
 import { Router } from '@angular/router';
+import { ConfirmationComponent } from '../../../../common/confirmation/confirmation.component';
 
 @Component({
   selector: 'app-root-admin-dashboard',
@@ -31,6 +32,7 @@ import { Router } from '@angular/router';
     MatDialogModule,
     MatPaginator,
     MatPaginatorModule,
+    ConfirmationComponent,
   ],
   templateUrl: './root-admin-dashboard.component.html',
   styleUrl: './root-admin-dashboard.component.scss',
@@ -42,17 +44,17 @@ export class RootAdminDashboardComponent {
     {
       name: 'Admins',
       value: '15',
-      type:1,
+      type: 1,
     },
     {
       name: 'States',
       value: '17',
-      type:1,
+      type: 1,
     },
     {
       name: 'Taxes',
       value: '23',
-      type:1,
+      type: 1,
     },
   ];
 
@@ -159,7 +161,20 @@ export class RootAdminDashboardComponent {
     });
   }
 
+  openConfirmDialog(
+    enterAnimationDuration: string,
+    exitAnimationDuration: string
+  ): void {
+    this.dialog.open(ConfirmationComponent, {
+      enterAnimationDuration,
+      exitAnimationDuration,
+    });
+  }
+
   createTax(event: any) {
     this.router.navigateByUrl('create-tax');
   }
+
+  deleteAdmin() {}
+  editAdmin() {}
 }
