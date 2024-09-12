@@ -1,1 +1,20 @@
-@import url("../../../../common/styles/create-page.scss");
+// @import url("../../../../common/styles/create-page.scss");
+@import url("../../common/styles/create-page.scss");
+
+.confirm-container {
+  padding: 20px;
+  background: #fff;
+  width: 40vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .message {
+    p {
+      font-size: 20px;
+      font-weight: 600;
+      color: #e65454;
+      margin: 0;
+    }
+  }
+}

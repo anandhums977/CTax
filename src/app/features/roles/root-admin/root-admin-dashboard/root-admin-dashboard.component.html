@@ -55,7 +55,7 @@
                         <button mat-button class="warn">REJECT</button>
                      </mat-cell> -->
                      <mat-cell *matCellDef="let element">
-                        <svg (click)="deleteAdmin(); $event.stopPropagation(); openConfirmDialog('400ms', '200ms')"
+                        <svg (click)="deleteAdmin(); $event.stopPropagation(); openDeleteConfirm('400ms', '200ms')"
                            xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 39 39" fill="none">
                            <circle cx="19.5" cy="19.5" r="19.5" fill="#FF0000" fill-opacity="0.07" />
                            <path
@@ -117,7 +117,7 @@
                      <mat-header-cell *matHeaderCellDef> ACTIONS </mat-header-cell>
                      <mat-cell *matCellDef="let element">
                         <button mat-button class="primary">ACCEPT</button>
-                        <button mat-button class="warn">REJECT</button>
+                        <button mat-button class="warn" (click)="openRejectConfirm('400ms', '200ms')">REJECT</button>
                      </mat-cell>
                   </ng-container>
 

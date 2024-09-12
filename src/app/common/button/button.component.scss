@@ -8,7 +8,6 @@
   $main-green: #00aa98;
   $main-grey: #eeeeee;
 
-
   .just-center {
     display: flex;
     align-items: center;
@@ -35,8 +34,16 @@
       background: #029082;
     }
   }
-  button.clear{
-    background:  $main-grey;
+
+  .red-btn {
+    background: #e65454;
+
+    &:hover {
+      background: #c23b3b;
+    }
+  }
+  button.clear {
+    background: $main-grey;
     color: #000000;
   }
 }

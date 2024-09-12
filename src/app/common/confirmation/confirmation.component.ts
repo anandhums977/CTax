@@ -1,5 +1,6 @@
+import { Component, Inject } from '@angular/core';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { DialogRef } from '@angular/cdk/dialog';
-import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -29,7 +30,11 @@ import { ButtonComponent } from '../button/button.component';
 export class ConfirmationComponent {
   stateForm: FormGroup;
 
-  constructor(public dialogRef: DialogRef, private fb: FormBuilder) {
+  constructor(
+    public dialogRef: DialogRef,
+    private fb: FormBuilder,
+    @Inject(MAT_DIALOG_DATA) public confirmData: { type: string }
+  ) {
     this.stateForm = this.fb.group({
       name: ['', Validators.required],
       admin: ['', Validators.required],

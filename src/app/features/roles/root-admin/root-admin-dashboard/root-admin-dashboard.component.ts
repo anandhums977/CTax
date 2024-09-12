@@ -161,13 +161,25 @@ export class RootAdminDashboardComponent {
     });
   }
 
-  openConfirmDialog(
+  openDeleteConfirm(
     enterAnimationDuration: string,
     exitAnimationDuration: string
   ): void {
     this.dialog.open(ConfirmationComponent, {
       enterAnimationDuration,
       exitAnimationDuration,
+      data: { type: 'delete' },
+    });
+  }
+
+  openRejectConfirm(
+    enterAnimationDuration: string,
+    exitAnimationDuration: string
+  ): void {
+    this.dialog.open(ConfirmationComponent, {
+      enterAnimationDuration,
+      exitAnimationDuration,
+      data: { type: 'reject' },
     });
   }
 

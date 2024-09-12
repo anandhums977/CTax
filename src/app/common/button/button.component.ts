@@ -9,7 +9,8 @@ import { CommonModule } from '@angular/common';
 })
 export class ButtonComponent {
   @Input() buttonLabel: string = '';
-  @Input() buttonType: string = 'primary'
+  @Input() buttonType: string = 'primary';
+  @Input() btnColor: string = 'green';
   @Output() buttonclicked = new EventEmitter<any>();
 
   onButtonClick(event: any) {
