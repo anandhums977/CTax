@@ -4,12 +4,15 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { SearchComponent } from '../../../../common/search/search.component';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
-import {Dialog, DialogModule} from '@angular/cdk/dialog';
+import { Dialog, DialogModule } from '@angular/cdk/dialog';
 import { PersonDetailsComponent } from '../../../../common/person-details/person-details.component';
-import {MatMenuModule} from '@angular/material/menu';
-import {MatSelectModule} from '@angular/material/select';
-import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatSelectModule } from '@angular/material/select';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { ButtonComponent } from '../../../../common/button/button.component';
+import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
+import { ConfirmationComponent } from '../../../../common/confirmation/confirmation.component';
 @Component({
   selector: 'app-operations-manager-dashboard',
   standalone: true,
@@ -23,7 +26,8 @@ import { ButtonComponent } from '../../../../common/button/button.component';
     SearchComponent,
     DialogModule,
     MatTableModule,
-    MatMenuModule
+    MatMenuModule,
+    ConfirmationComponent,
   ],
   templateUrl: './operations-manager-dashboard.component.html',
   styleUrl: './operations-manager-dashboard.component.scss',
@@ -32,21 +36,21 @@ export class OperationsManagerDashboardComponent {
   name: string = 'Deepak Jose';
   location: string = 'Kochi';
   dialog = inject(Dialog);
-  standsList =[
+  standsList = [
     {
-    id:1,
-    name:'Stand 1'
-  },
-  {
-    id:2,
-    name:'Stand 2'
-  },
-  {
-    id:3,
-    name:'Stand 3'
-  }
-]
-  tcaApprovalData =  new MatTableDataSource([
+      id: 1,
+      name: 'Stand 1',
+    },
+    {
+      id: 2,
+      name: 'Stand 2',
+    },
+    {
+      id: 3,
+      name: 'Stand 3',
+    },
+  ];
+  tcaApprovalData = new MatTableDataSource([
     {
       id: 1,
       name: 'Alan',
@@ -83,7 +87,7 @@ export class OperationsManagerDashboardComponent {
       actions: { accept: 'ACCEPT', reject: 'REJECT' },
     },
   ]);
-  tcaActivationData =  new MatTableDataSource([
+  tcaActivationData = new MatTableDataSource([
     {
       id: 1,
       name: 'Alan',
@@ -146,32 +150,45 @@ export class OperationsManagerDashboardComponent {
     {
       name: 'Agent Admins',
       value: '15',
-      type:1,
+      type: 1,
     },
     {
       name: 'POS',
       value: '12517',
-      type:1,
+      type: 1,
     },
     {
       name: 'Total Amount',
       value: '2500$',
-      type:2,
+      type: 2,
     },
   ];
 
   @ViewChild('paginator1') paginator1!: MatPaginator;
   @ViewChild('paginator2') paginator2!: MatPaginator;
 
+  constructor(private matDialog: MatDialog, private router: Router) {}
 
   ngOnInit() {
-    this.tcaActivationData.paginator = this.paginator2
-    this.tcaApprovalData.paginator = this.paginator1
+    this.tcaActivationData.paginator = this.paginator2;
+    this.tcaApprovalData.paginator = this.paginator1;
   }
-  openPersonDeatilsDialog(data:any) {
+
+  openPersonDeatilsDialog(data: any) {
     this.dialog.open(PersonDetailsComponent, {
       minWidth: '300px',
-      data: data
+      data: data,
+    });
+  }
+
+  openRejectConfirm(
+    enterAnimationDuration: string,
+    exitAnimationDuration: string
+  ): void {
+    this.matDialog.open(ConfirmationComponent, {
+      enterAnimationDuration,
+      exitAnimationDuration,
+      data: { type: 'reject' },
     });
   }
 }

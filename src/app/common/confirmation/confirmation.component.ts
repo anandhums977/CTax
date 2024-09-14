@@ -1,5 +1,5 @@
 import { Component, Inject } from '@angular/core';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { DialogRef } from '@angular/cdk/dialog';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -31,7 +31,7 @@ export class ConfirmationComponent {
   stateForm: FormGroup;
 
   constructor(
-    public dialogRef: DialogRef,
+    public dialogRef: MatDialogRef<ConfirmationComponent>,
     private fb: FormBuilder,
     @Inject(MAT_DIALOG_DATA) public confirmData: { type: string }
   ) {

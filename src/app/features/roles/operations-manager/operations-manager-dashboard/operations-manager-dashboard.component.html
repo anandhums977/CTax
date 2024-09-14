@@ -1,17 +1,9 @@
-<app-ribbon
-  [cardData]="cardDetails"
-  [name]="name"
-  [location]="location"
-></app-ribbon>
+<app-ribbon [cardData]="cardDetails" [name]="name" [location]="location"></app-ribbon>
 <mat-tab-group>
   <mat-tab label="TCA Approval">
     <div class="search-and-table-container">
       <div class="search-and-filter">
-        <img
-          [matMenuTriggerFor]="tcaApptovalFilter"
-          src="../../../../../assets/common/filter.svg"
-          alt=""
-        />
+        <img [matMenuTriggerFor]="tcaApptovalFilter" src="../../../../../assets/common/filter.svg" alt="" />
         <search></search>
       </div>
 
@@ -55,26 +47,17 @@
               <mat-header-cell *matHeaderCellDef> ACTIONS </mat-header-cell>
               <mat-cell *matCellDef="let element">
                 <button mat-button class="primary">ACCEPT</button>
-                <button mat-button class="warn">REJECT</button>
+                <button mat-button class="warn" (click)="openRejectConfirm('400ms', '200ms')">REJECT</button>
               </mat-cell>
             </ng-container>
 
-            <mat-header-row
-              *matHeaderRowDef="displayedColumnsTcaApprovalData"
-            ></mat-header-row>
-            <mat-row
-              (click)="openPersonDeatilsDialog(row)"
-              *matRowDef="let row; columns: displayedColumnsTcaApprovalData"
-            ></mat-row>
+            <mat-header-row *matHeaderRowDef="displayedColumnsTcaApprovalData"></mat-header-row>
+            <mat-row (click)="openPersonDeatilsDialog(row)"
+              *matRowDef="let row; columns: displayedColumnsTcaApprovalData"></mat-row>
           </mat-table>
         </div>
-        <mat-paginator
-          #paginator1
-          [length]="100"
-          [pageSize]="10"
-          [pageSizeOptions]="[5, 10, 25, 100]"
-          aria-label="Select page"
-        >
+        <mat-paginator #paginator1 [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]"
+          aria-label="Select page">
         </mat-paginator>
       </div>
     </div>
@@ -92,46 +75,46 @@
       <div class="table-paginator-container">
         <div class="table-container">
           <mat-table [dataSource]="tcaActivationData"> -->
-            <!-- Position Column -->
-            <!-- <ng-container matColumnDef="#">
+  <!-- Position Column -->
+  <!-- <ng-container matColumnDef="#">
               <mat-header-cell *matHeaderCellDef> # </mat-header-cell>
               <mat-cell *matCellDef="let element; let i = index">
                 {{ i + 1 }}
               </mat-cell>
             </ng-container> -->
 
-            <!-- Name Column -->
-            <!-- <ng-container matColumnDef="name">
+  <!-- Name Column -->
+  <!-- <ng-container matColumnDef="name">
               <mat-header-cell *matHeaderCellDef> NAME </mat-header-cell>
               <mat-cell *matCellDef="let element">
                 {{ element.name }}
               </mat-cell>
             </ng-container> -->
 
-            <!-- Admin Name Column -->
-            <!-- <ng-container matColumnDef="adminName">
+  <!-- Admin Name Column -->
+  <!-- <ng-container matColumnDef="adminName">
               <mat-header-cell *matHeaderCellDef> ADMIN NAME </mat-header-cell>
               <mat-cell *matCellDef="let element">
                 {{ element.adminName }}
               </mat-cell>
             </ng-container> -->
 
-            <!-- Stand Column -->
-            <!-- <ng-container matColumnDef="stand">
+  <!-- Stand Column -->
+  <!-- <ng-container matColumnDef="stand">
               <mat-header-cell *matHeaderCellDef> STAND </mat-header-cell>
               <mat-cell *matCellDef="let element">
                 {{ element.stand }}
               </mat-cell>
             </ng-container> -->
 
-            <!-- POS Column -->
-            <!-- <ng-container matColumnDef="pos">
+  <!-- POS Column -->
+  <!-- <ng-container matColumnDef="pos">
               <mat-header-cell *matHeaderCellDef> POS </mat-header-cell>
               <mat-cell *matCellDef="let element"> {{ element.pos }} </mat-cell>
             </ng-container> -->
 
-            <!-- Actions Column -->
-            <!-- <ng-container matColumnDef="actions">
+  <!-- Actions Column -->
+  <!-- <ng-container matColumnDef="actions">
               <mat-header-cell *matHeaderCellDef> ACTIONS </mat-header-cell>
               <mat-cell *matCellDef="let element">
                 <button mat-button class="primary">ACCEPT</button>
@@ -139,7 +122,7 @@
               </mat-cell>
             </ng-container> -->
 
-            <!-- <mat-header-row
+  <!-- <mat-header-row
               *matHeaderRowDef="displayedColumnsTcaActivationData"
             ></mat-header-row>
             <mat-row
