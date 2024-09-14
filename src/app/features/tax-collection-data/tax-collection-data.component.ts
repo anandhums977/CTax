@@ -55,7 +55,7 @@ export class TaxCollectionDataComponent {
     {
       name: 'Total Tickets',
       value: '25',
-      type:1,
+      type:3,
     },
     {
       name: 'Total Collection',

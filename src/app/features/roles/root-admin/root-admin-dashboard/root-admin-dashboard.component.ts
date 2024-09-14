@@ -49,12 +49,12 @@ export class RootAdminDashboardComponent {
     {
       name: 'States',
       value: '17',
-      type: 1,
+      type: 5,
     },
     {
       name: 'Taxes',
       value: '23',
-      type: 1,
+      type: 4,
     },
   ];
 
