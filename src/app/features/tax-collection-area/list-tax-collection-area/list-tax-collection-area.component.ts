@@ -1,7 +1,7 @@
 import { Dialog, DialogModule } from '@angular/cdk/dialog';
 import { Component, inject, ViewChild } from '@angular/core';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
-import { CreateZonesComponent } from '../create-zones/create-zones.component';
+import { CreateTaxCollectionAreaComponent } from '../create-tax-collection-area/create-tax-collection-area.component';
 import { SearchComponent } from '../../../common/search/search.component';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { ButtonComponent } from '../../../common/button/button.component';
@@ -9,8 +9,9 @@ import { PersonDetailsComponent } from '../../../common/person-details/person-de
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
+
 @Component({
-  selector: 'app-list-zones',
+  selector: 'app-list-tax-collection-area',
   standalone: true,
   imports: [
     MatTableModule,
@@ -22,10 +23,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatFormFieldModule,
     MatMenuModule,
   ],
-  templateUrl: './list-zones.component.html',
-  styleUrl: './list-zones.component.scss',
+  templateUrl: './list-tax-collection-area.component.html',
+  styleUrl: './list-tax-collection-area.component.scss',
 })
-export class ListZonesComponent {
+export class ListTaxCollectionAreaComponent {
   dialog = inject(Dialog);
   stateList = [
     {
@@ -41,29 +42,48 @@ export class ListZonesComponent {
       name: 'State 3',
     },
   ];
-  zonesList = new MatTableDataSource([
-    { name: 'Zone 1', manager: 'Alice Johnson', state: 'Brazzaville' },
-    { name: 'Zone 2', manager: 'Bob Smith', state: 'Pointe-Noire' },
-    { name: 'Zone 3', manager: 'Charlie Davis', state: 'Niari' },
-    { name: 'Zone 4', manager: 'David Brown', state: 'Sangha' },
-    { name: 'Zone 5', manager: 'Emma Wilson', state: 'Kouilou' },
-    { name: 'Zone 6', manager: 'Fiona Green', state: 'Likouala' },
-    { name: 'Zone 7', manager: 'George Thompson', state: 'Lékoumou' },
-    { name: 'Zone 8', manager: 'Hannah White', state: 'Cuvette' },
-    { name: 'Zone 9', manager: 'Ian Walker', state: 'Plateaux' },
-    { name: 'Zone 10', manager: 'Jack Taylor', state: 'Bouenza' },
+  taxCollectionAreas = new MatTableDataSource([
+    {
+      name: 'Area 1',
+      zone: 'Zone 1',
+      state: 'California',
+      zoneManager: 'Alice Johnson',
+    },
+    {
+      name: 'Area 2',
+      zone: 'Zone 2',
+      state: 'Texas',
+      zoneManager: 'Bob Smith',
+    },
+    {
+      name: 'Area 3',
+      zone: 'Zone 3',
+      state: 'New York',
+      zoneManager: 'Charlie Davis',
+    },
+    {
+      name: 'Area 4',
+      zone: 'Zone 4',
+      state: 'Florida',
+      zoneManager: 'David Brown',
+    },
+    {
+      name: 'Area 5',
+      zone: 'Zone 5',
+      state: 'Illinois',
+      zoneManager: 'Emma Wilson',
+    },
   ]);
-  displayedColumnsZonesListing = ['#', 'name', 'manager', 'state', 'actions'];
-  deleteZone() {}
-  editZone() {}
-
-  CreateZoneDialog() {
-    this.dialog.open(CreateZonesComponent, {
+  displayedColumnsAreaListing = ['#', 'zone', 'state', 'zoneManager', 'actions'];
+  deleteArea() {}
+  editArea() {}
+  CreateAreaDialog() {
+    this.dialog.open(CreateTaxCollectionAreaComponent, {
       minWidth: '300px',
     });
   }
   @ViewChild('paginator1') paginator1!: MatPaginator;
   ngOnInit() {
-    this.zonesList.paginator = this.paginator1
+    this.taxCollectionAreas.paginator = this.paginator1
   }
 }

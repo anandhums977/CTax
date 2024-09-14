@@ -7,6 +7,7 @@ import { CreateTaxComponent } from './features/roles/root-admin/create-tax/creat
 import { ListZoneManagersComponent } from './features/roles/zone-managers/list-zone-managers/list-zone-managers.component';
 import { TaxCollectionDataComponent } from './features/tax-collection-data/tax-collection-data.component';
 import { ListZonesComponent } from './features/zones/list-zones/list-zones.component';
+import { ListTaxCollectionAreaComponent } from './features/tax-collection-area/list-tax-collection-area/list-tax-collection-area.component';
 export const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' }, // Redirect to login if no route is specified
   { path: 'login', component: LoginComponent },
@@ -34,6 +35,10 @@ export const routes: Routes = [
   {
     path: 'zones-list',
     component: ListZonesComponent,
+  },
+  {
+    path: 'area-list',
+    component: ListTaxCollectionAreaComponent,
   },
   {
     path: 'admin',
