@@ -4,17 +4,21 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { SearchComponent } from '../../common/search/search.component';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
-import {Dialog, DialogModule} from '@angular/cdk/dialog';
+import { Dialog, DialogModule } from '@angular/cdk/dialog';
 import { PersonDetailsComponent } from '../../common/person-details/person-details.component';
-import {MatMenuModule} from '@angular/material/menu';
-import {MatSelectModule} from '@angular/material/select';
-import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatSelectModule } from '@angular/material/select';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { ButtonComponent } from '../../common/button/button.component';
 import { CommonModule } from '@angular/common';
+import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
+import { ConfirmationComponent } from '../../common/confirmation/confirmation.component';
 @Component({
   selector: 'app-tax-collection-data',
   standalone: true,
-  imports: [    RibbonComponent,
+  imports: [
+    RibbonComponent,
     MatPaginatorModule,
     MatSelectModule,
     ButtonComponent,
@@ -24,111 +28,112 @@ import { CommonModule } from '@angular/common';
     SearchComponent,
     DialogModule,
     MatTableModule,
-    MatMenuModule],
+    MatMenuModule,
+  ],
   templateUrl: './tax-collection-data.component.html',
-  styleUrl: './tax-collection-data.component.scss'
+  styleUrl: './tax-collection-data.component.scss',
 })
 export class TaxCollectionDataComponent {
-  name:string = 'Deepak Jose';
-  location:string = 'Kochi';
+  name: string = 'Deepak Jose';
+  location: string = 'Kochi';
   dialog = inject(Dialog);
-  standsList =[
+  standsList = [
     {
-    id:1,
-    name:'Stand 1'
-  },
-  {
-    id:2,
-    name:'Stand 2'
-  },
-  {
-    id:3,
-    name:'Stand 3'
-  }
-]
+      id: 1,
+      name: 'Stand 1',
+    },
+    {
+      id: 2,
+      name: 'Stand 2',
+    },
+    {
+      id: 3,
+      name: 'Stand 3',
+    },
+  ];
   cardDetails = [
     {
       name: 'Total Stands',
       value: '5',
-      type:1,
+      type: 1,
     },
     {
       name: 'Total Tickets',
       value: '25',
-      type:3,
+      type: 3,
     },
     {
       name: 'Total Collection',
       value: '2500',
-      type:2,
+      type: 2,
     },
   ];
   taxCollectionData = new MatTableDataSource([
     {
-      stand: "Stand 1",
-      agent: "Deepak",
-      contact: "xxxxxx",
+      stand: 'Stand 1',
+      agent: 'Deepak',
+      contact: 'xxxxxx',
       tickets: 12,
-      actualAmount: "1200",
-      collectedAmount: "1200",
+      actualAmount: '1200',
+      collectedAmount: '1200',
       difference: 0,
       actions: {
         approve: true,
-        reject: false
-      }
+        reject: false,
+      },
     },
     {
-      stand: "Stand 2",
-      agent: "Abin",
-      contact: "xxxxxx",
+      stand: 'Stand 2',
+      agent: 'Abin',
+      contact: 'xxxxxx',
       tickets: 10,
-      actualAmount: "1000",
-      collectedAmount: "1000",
+      actualAmount: '1000',
+      collectedAmount: '1000',
       difference: 0,
       actions: {
         approve: true,
-        reject: false
-      }
+        reject: false,
+      },
     },
     {
-      stand: "Stand 3",
-      agent: "Anandhu",
-      contact: "xxxxxx",
+      stand: 'Stand 3',
+      agent: 'Anandhu',
+      contact: 'xxxxxx',
       tickets: 30,
-      actualAmount: "3000",
-      collectedAmount: "2000",
-      difference: "1000",
+      actualAmount: '3000',
+      collectedAmount: '2000',
+      difference: '1000',
       actions: {
         approve: true,
-        reject: false
-      }
+        reject: false,
+      },
     },
     {
-      stand: "Stand 4",
-      agent: "Krishnana",
-      contact: "xxxxxx",
+      stand: 'Stand 4',
+      agent: 'Krishnana',
+      contact: 'xxxxxx',
       tickets: 45,
-      actualAmount: "4500",
-      collectedAmount: "4500",
+      actualAmount: '4500',
+      collectedAmount: '4500',
       difference: 0,
       actions: {
         approve: true,
-        reject: false
-      }
+        reject: false,
+      },
     },
     {
-      stand: "Stand 5",
-      agent: "Unni",
-      contact: "xxxxxx",
+      stand: 'Stand 5',
+      agent: 'Unni',
+      contact: 'xxxxxx',
       tickets: 50,
-      actualAmount: "5000",
-      collectedAmount: "5000",
+      actualAmount: '5000',
+      collectedAmount: '5000',
       difference: 0,
       actions: {
         approve: true,
-        reject: false
-      }
-    }
+        reject: false,
+      },
+    },
   ]);
   displayedColumns = [
     '#',
@@ -139,19 +144,31 @@ export class TaxCollectionDataComponent {
     'actualAmount',
     'collectedAmount',
     'difference',
-    'actions'
+    'actions',
   ];
 
   @ViewChild('paginator1') paginator1!: MatPaginator;
 
-  ngOnInit() {
-    this.taxCollectionData.paginator = this.paginator1
+  constructor(private matDialog: MatDialog, private router: Router) {}
 
+  ngOnInit() {
+    this.taxCollectionData.paginator = this.paginator1;
   }
-  openPersonDeatilsDialog(data:any) {
+  openPersonDeatilsDialog(data: any) {
     this.dialog.open(PersonDetailsComponent, {
       minWidth: '300px',
-      data: data
+      data: data,
+    });
+  }
+
+  openRejectConfirm(
+    enterAnimationDuration: string,
+    exitAnimationDuration: string
+  ): void {
+    this.matDialog.open(ConfirmationComponent, {
+      enterAnimationDuration,
+      exitAnimationDuration,
+      data: { type: 'reject' },
     });
   }
 }

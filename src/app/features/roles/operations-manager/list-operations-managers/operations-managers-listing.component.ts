@@ -4,11 +4,14 @@ import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { ButtonComponent } from '../../../../common/button/button.component';
 import { PersonDetailsComponent } from '../../../../common/person-details/person-details.component';
-import {Dialog, DialogModule} from '@angular/cdk/dialog';
-import {MatMenuModule} from '@angular/material/menu';
-import {MatSelectModule} from '@angular/material/select';
-import {MatFormFieldModule} from '@angular/material/form-field';
+import { Dialog, DialogModule } from '@angular/cdk/dialog';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatSelectModule } from '@angular/material/select';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { CreateOperationsManagerComponent } from '../create-operations-manager/create-operations-manager.component';
+import { ConfirmationComponent } from '../../../../common/confirmation/confirmation.component';
+import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-operations-managers-listing',
   standalone: true,
@@ -20,27 +23,28 @@ import { CreateOperationsManagerComponent } from '../create-operations-manager/c
     MatSelectModule,
     DialogModule,
     MatFormFieldModule,
-    MatMenuModule
+    MatMenuModule,
+    ConfirmationComponent,
   ],
   templateUrl: './operations-managers-listing.component.html',
   styleUrl: './operations-managers-listing.component.scss',
 })
 export class OperationsManagersListingComponent {
   dialog = inject(Dialog);
-  standsList =[
+  standsList = [
     {
-    id:1,
-    name:'Stand 1'
-  },
-  {
-    id:2,
-    name:'Stand 2'
-  },
-  {
-    id:3,
-    name:'Stand 3'
-  }
-]
+      id: 1,
+      name: 'Stand 1',
+    },
+    {
+      id: 2,
+      name: 'Stand 2',
+    },
+    {
+      id: 3,
+      name: 'Stand 3',
+    },
+  ];
   operationsManagersListing = new MatTableDataSource([
     {
       id: 1,
@@ -54,7 +58,7 @@ export class OperationsManagersListingComponent {
       totalAgentAdmins: 5,
       totalPOS: 256,
       totalTCs: 255,
-      totalTaxCollected: '500$'
+      totalTaxCollected: '500$',
     },
     {
       id: 2,
@@ -68,7 +72,7 @@ export class OperationsManagersListingComponent {
       totalAgentAdmins: 7,
       totalPOS: 312,
       totalTCs: 311,
-      totalTaxCollected: '600$'
+      totalTaxCollected: '600$',
     },
     {
       id: 3,
@@ -82,7 +86,7 @@ export class OperationsManagersListingComponent {
       totalAgentAdmins: 8,
       totalPOS: 400,
       totalTCs: 399,
-      totalTaxCollected: '700$'
+      totalTaxCollected: '700$',
     },
     {
       id: 4,
@@ -96,7 +100,7 @@ export class OperationsManagersListingComponent {
       totalAgentAdmins: 3,
       totalPOS: 500,
       totalTCs: 499,
-      totalTaxCollected: '800$'
+      totalTaxCollected: '800$',
     },
     {
       id: 5,
@@ -110,7 +114,7 @@ export class OperationsManagersListingComponent {
       totalAgentAdmins: 2,
       totalPOS: 600,
       totalTCs: 599,
-      totalTaxCollected: '900$'
+      totalTaxCollected: '900$',
     },
   ]);
 
@@ -125,17 +129,31 @@ export class OperationsManagersListingComponent {
     'actions',
   ];
 
+  constructor(private matDialog: MatDialog, private router: Router) {}
+
   deleteOperationsManager() {}
   editOperationsManager() {}
-  openPersonDeatilsDialog(data:any) {
+  openPersonDeatilsDialog(data: any) {
     this.dialog.open(PersonDetailsComponent, {
       minWidth: '300px',
-      data: data
+      data: data,
     });
   }
+
   CreateOperationsManagerDialog() {
     this.dialog.open(CreateOperationsManagerComponent, {
       minWidth: '300px',
+    });
+  }
+
+  openDeleteConfirm(
+    enterAnimationDuration: string,
+    exitAnimationDuration: string
+  ): void {
+    this.matDialog.open(ConfirmationComponent, {
+      enterAnimationDuration,
+      exitAnimationDuration,
+      data: { type: 'delete' },
     });
   }
 }
