@@ -2,13 +2,13 @@
   <div class="left">
     <div class="each-info">
       <img src="../../../assets/images/ribbon/avatar.svg" />
-      <p class="title">Name:</p>
+      <p class="title">{{ 'NAME' | translate}}:</p>
       <p class="value">{{ name }}</p>
     </div>
 
     <div class="each-info">
       <img src="../../../assets/images/ribbon/location.svg" />
-      <p class="title">Location:</p>
+      <p class="title">{{ 'LOCATION' | translate}}:</p>
       <p class="value">{{ location }}</p>
     </div>
   </div>
@@ -18,7 +18,7 @@
     <div class="each-card">
       <div class="data">
         <p class="count">{{ card.value }}</p>
-        <p class="name">{{ card.name }}</p>
+        <p class="name">{{ card.name | translate }}</p>
       </div>
       @if(card.type==1){
       <svg

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 
 @Component({
@@ -11,6 +12,7 @@ import {FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, V
   imports: [
     CommonModule,
     MatFormFieldModule,
+    TranslateModule,
     MatInputModule,
     FormsModule,
     ReactiveFormsModule,
@@ -23,7 +25,8 @@ export class LoginComponent {
 
   loginForm!: FormGroup;
   errorMessage: string = '';
-
+ 
+  title = 'angular-i18n';
   constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {
@@ -44,6 +47,8 @@ export class LoginComponent {
       console.log('Form is invalid');
     }
   }
+
+ 
 
   updateErrorMessage() {
     if (this.loginForm.get('email')?.hasError('required')) {

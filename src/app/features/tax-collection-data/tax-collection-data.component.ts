@@ -39,35 +39,36 @@ export class TaxCollectionDataComponent {
   dialog = inject(Dialog);
   standsList = [
     {
-      id: 1,
-      name: 'Stand 1',
-    },
-    {
-      id: 2,
-      name: 'Stand 2',
-    },
-    {
-      id: 3,
-      name: 'Stand 3',
-    },
-  ];
-  cardDetails = [
-    {
-      name: 'Total Stands',
-      value: '5',
-      type: 1,
-    },
-    {
-      name: 'Total Tickets',
-      value: '25',
-      type: 3,
-    },
-    {
-      name: 'Total Collection',
-      value: '2500',
-      type: 2,
-    },
-  ];
+    id:1,
+    name:'Stand 1'
+  },
+  {
+    id:2,
+    name:'Stand 2'
+  },
+  {
+    id:3,
+    name:'Stand 3'
+  }
+]
+ cardDetails = [
+  {
+    name: 'RIBBON_DATA_TITLE.TOTAL_STANDS',
+    value: '5',
+    type: 1,
+  },
+  {
+    name: 'RIBBON_DATA_TITLE.TOTAL_TICKETS',
+    value: '25',
+    type: 3,
+  },
+  {
+    name: 'RIBBON_DATA_TITLE.TOTAL_COLLECTION',
+    value: '2500',
+    type: 2,
+  },
+];
+
   taxCollectionData = new MatTableDataSource([
     {
       stand: 'Stand 1',

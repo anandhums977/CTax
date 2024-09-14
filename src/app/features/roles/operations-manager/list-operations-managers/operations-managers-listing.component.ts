@@ -9,6 +9,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { CreateOperationsManagerComponent } from '../create-operations-manager/create-operations-manager.component';
+import { TranslateModule } from '@ngx-translate/core';
 import { ConfirmationComponent } from '../../../../common/confirmation/confirmation.component';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
@@ -23,6 +24,7 @@ import { Router } from '@angular/router';
     MatSelectModule,
     DialogModule,
     MatFormFieldModule,
+    TranslateModule,
     MatMenuModule,
     ConfirmationComponent,
   ],

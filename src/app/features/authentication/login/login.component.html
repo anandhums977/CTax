@@ -5,9 +5,9 @@
   <div class="right-panel">
     <div class="form-card">
       <div class="form-card-title-and-description">
-        <div class="title">WELCOME</div>
+        <div class="title">{{ 'WELCOME' | translate}}</div>
         <div class="description">
-          Welcome to CTax, login to continue.
+      {{'WELCOME_TITLE' | translate}}
         </div>
       </div>
       <form (ngSubmit)="onLogin()" class="login-form" [formGroup]="loginForm">
@@ -50,9 +50,10 @@
 
 
         <button mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid">
-          LOGIN
+         {{ 'LOGIN' | translate}} 
         </button>
       </form>
     </div>
   </div>
 </div>
+<p>Congratulations! {{ 'title' | translate }} 🎉</p>
