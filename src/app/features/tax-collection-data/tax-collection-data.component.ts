@@ -168,7 +168,15 @@ export class TaxCollectionDataComponent {
     this.matDialog.open(ConfirmationComponent, {
       enterAnimationDuration,
       exitAnimationDuration,
-      data: { type: 'reject' },
+      data: {
+        type: 'reject',
+        msg_data: {
+          title: 'Reject Tax Collection?',
+          msg_1: 'Are you sure to reject this collected tax entry?',
+          msg_2:
+            'This tax collection data will be lost. This action cannot be undone.',
+        },
+      },
     });
   }
 }

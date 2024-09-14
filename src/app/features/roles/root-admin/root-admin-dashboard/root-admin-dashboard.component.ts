@@ -168,7 +168,14 @@ export class RootAdminDashboardComponent {
     this.dialog.open(ConfirmationComponent, {
       enterAnimationDuration,
       exitAnimationDuration,
-      data: { type: 'delete' },
+      data: {
+        type: 'delete',
+        msg_data: {
+          title: 'Delete Admin?',
+          msg_1: 'Are you sure to delete this admin?',
+          msg_2: 'All data related to this admin will be deleted.',
+        },
+      },
     });
   }
 
@@ -179,7 +186,15 @@ export class RootAdminDashboardComponent {
     this.dialog.open(ConfirmationComponent, {
       enterAnimationDuration,
       exitAnimationDuration,
-      data: { type: 'reject' },
+      data: {
+        type: 'reject',
+        msg_data: {
+          title: 'Reject Tax?',
+          msg_1: 'Are you sure to reject this tax entry?',
+          msg_2:
+            'This tax data will be lost. If needed a new tax entry should be created.',
+        },
+      },
     });
   }
 

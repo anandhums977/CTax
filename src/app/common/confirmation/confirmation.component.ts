@@ -33,7 +33,7 @@ export class ConfirmationComponent {
   constructor(
     public dialogRef: MatDialogRef<ConfirmationComponent>,
     private fb: FormBuilder,
-    @Inject(MAT_DIALOG_DATA) public confirmData: { type: string }
+    @Inject(MAT_DIALOG_DATA) public confirmData: any
   ) {
     this.stateForm = this.fb.group({
       name: ['', Validators.required],

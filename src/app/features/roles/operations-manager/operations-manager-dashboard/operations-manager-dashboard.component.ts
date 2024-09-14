@@ -188,7 +188,15 @@ export class OperationsManagerDashboardComponent {
     this.matDialog.open(ConfirmationComponent, {
       enterAnimationDuration,
       exitAnimationDuration,
-      data: { type: 'reject' },
+      data: {
+        type: 'reject',
+        msg_data: {
+          title: 'Reject TCA?',
+          msg_1: 'Are you sure to reject this tax collection agent?',
+          msg_2:
+            'This tax collection agent data will be lost. If needed a new tax collection agent should be created.',
+        },
+      },
     });
   }
 }

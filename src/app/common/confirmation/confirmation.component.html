@@ -1,31 +1,16 @@
 <div class="delete-dialog-container">
    <div class="delete-dialog-header">
-      @if(confirmData.type == 'delete'){
       <h1 class="delete-dialog-title">
-         Delete Admin?
+         {{confirmData.msg_data.title}}
       </h1>
-      } @else {
-      <h1 class="delete-dialog-title">
-         Reject Tax?
-      </h1>
-      }
    </div>
    <div class="delete-dialog-content">
-      @if(confirmData.type == 'delete'){
       <p class="delete-dialog-message">
-         Are you sure to delete this admin?
+         {{confirmData.msg_data.msg_1}}
       </p>
       <p class="delete-dialog-message">
-         All data related to this admin will bde deleted?
+         {{confirmData.msg_data.msg_2}}
       </p>
-      } @else {
-      <p class="delete-dialog-message">
-         Are you sure to reject this tax entry?
-      </p>
-      <p class="delete-dialog-message">
-         This tax data will be lost. If needed a new tax entry should be created.
-      </p>
-      }
    </div>
    <div class="delete-dialog-footer">
       <button class="cancel" (click)="dialogRef.close(true)">Cancel</button>

@@ -102,7 +102,15 @@ export class AdminDashboardComponent {
     this.matDialog.open(ConfirmationComponent, {
       enterAnimationDuration,
       exitAnimationDuration,
-      data: { type: 'reject' },
+      data: {
+        type: 'reject',
+        msg_data: {
+          title: 'Reject Zone Manager?',
+          msg_1: 'Are you sure to reject this zone manager?',
+          msg_2:
+            'This zone manager data will be lost. If needed a new zone manager should be created.',
+        },
+      },
     });
   }
 }

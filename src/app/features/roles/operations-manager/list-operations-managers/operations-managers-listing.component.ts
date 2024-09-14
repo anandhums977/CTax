@@ -153,7 +153,14 @@ export class OperationsManagersListingComponent {
     this.matDialog.open(ConfirmationComponent, {
       enterAnimationDuration,
       exitAnimationDuration,
-      data: { type: 'delete' },
+      data: {
+        type: 'delete',
+        msg_data: {
+          title: 'Delete Operation Manager?',
+          msg_1: 'Are you sure to delete this operation manager?',
+          msg_2: 'All data related to this operation manager will be deleted.',
+        },
+      },
     });
   }
 }
