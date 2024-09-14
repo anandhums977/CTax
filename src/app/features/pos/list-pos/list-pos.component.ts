@@ -1,7 +1,7 @@
 import { Dialog, DialogModule } from '@angular/cdk/dialog';
 import { Component, inject, ViewChild } from '@angular/core';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
-import { CreateTaxCollectionAreaComponent } from '../create-tax-collection-area/create-tax-collection-area.component';
+import { CreatePosComponent } from '../create-pos/create-pos.component';
 import { SearchComponent } from '../../../common/search/search.component';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { ButtonComponent } from '../../../common/button/button.component';
@@ -11,7 +11,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 
 @Component({
-  selector: 'app-list-tax-collection-area',
+  selector: 'app-list-pos',
   standalone: true,
   imports: [
     MatTableModule,
@@ -23,10 +23,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatFormFieldModule,
     MatMenuModule,
   ],
-  templateUrl: './list-tax-collection-area.component.html',
-  styleUrl: './list-tax-collection-area.component.scss',
+  templateUrl: './list-pos.component.html',
+  styleUrl: './list-pos.component.scss',
 })
-export class ListTaxCollectionAreaComponent {
+export class ListPosComponent {
   dialog = inject(Dialog);
   stateList = [
     {
@@ -42,48 +42,55 @@ export class ListTaxCollectionAreaComponent {
       name: 'State 3',
     },
   ];
-  taxCollectionAreas = new MatTableDataSource([
-    {
-      name: 'Area 1',
-      zone: 'Zone 1',
-      state: 'California',
-      zoneManager: 'Alice Johnson',
-    },
-    {
-      name: 'Area 2',
-      zone: 'Zone 2',
-      state: 'Texas',
-      zoneManager: 'Bob Smith',
-    },
-    {
-      name: 'Area 3',
-      zone: 'Zone 3',
-      state: 'New York',
-      zoneManager: 'Charlie Davis',
-    },
-    {
-      name: 'Area 4',
-      zone: 'Zone 4',
-      state: 'Florida',
-      zoneManager: 'David Brown',
-    },
-    {
-      name: 'Area 5',
-      zone: 'Zone 5',
-      state: 'Illinois',
-      zoneManager: 'Emma Wilson',
-    },
-  ]);
-  displayedColumnsAreaListing = ['#', 'name','zone', 'state', 'zoneManager', 'actions'];
+// Dummy data for POS listing
+posListings = new MatTableDataSource([
+  {
+    name: 'POS 1',
+    state: 'California',
+    zone: 'Zone 1',
+    area: 'Area 1',
+    manager: 'Alice Johnson',
+  },
+  {
+    name: 'POS 2',
+    state: 'Texas',
+    zone: 'Zone 2',
+    area: 'Area 2',
+    manager: 'Bob Smith',
+  },
+  {
+    name: 'POS 3',
+    state: 'New York',
+    zone: 'Zone 3',
+    area: 'Area 3',
+    manager: 'Charlie Davis',
+  },
+  {
+    name: 'POS 4',
+    state: 'Florida',
+    zone: 'Zone 4',
+    area: 'Area 4',
+    manager: 'David Brown',
+  },
+  {
+    name: 'POS 5',
+    state: 'Illinois',
+    zone: 'Zone 5',
+    area: 'Area 5',
+    manager: 'Emma Wilson',
+  },
+]);
+displayedColumnsPOSListing = ['#', 'name', 'state', 'zone','area','manager', 'actions'];
+
   deleteArea() {}
   editArea() {}
-  CreateAreaDialog() {
-    this.dialog.open(CreateTaxCollectionAreaComponent, {
+  CreatePOSDialog() {
+    this.dialog.open(CreatePosComponent, {
       minWidth: '300px',
     });
   }
   @ViewChild('paginator1') paginator1!: MatPaginator;
   ngOnInit() {
-    this.taxCollectionAreas.paginator = this.paginator1
+    this.posListings.paginator = this.paginator1
   }
 }
