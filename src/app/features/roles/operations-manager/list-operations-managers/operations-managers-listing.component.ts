@@ -9,6 +9,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { CreateOperationsManagerComponent } from '../create-operations-manager/create-operations-manager.component';
+import { TranslateModule } from '@ngx-translate/core';
 @Component({
   selector: 'app-operations-managers-listing',
   standalone: true,
@@ -20,6 +21,7 @@ import { CreateOperationsManagerComponent } from '../create-operations-manager/c
     MatSelectModule,
     DialogModule,
     MatFormFieldModule,
+    TranslateModule,
     MatMenuModule
   ],
   templateUrl: './operations-managers-listing.component.html',

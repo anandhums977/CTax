@@ -8,7 +8,7 @@
       />
       <search></search>
     </div>
-    <app-button buttonLabel="+ Create Manager" (click)="CreateOperationsManagerDialog()"></app-button>
+    <app-button [buttonLabel]="'CREATE_MANAGER' | translate" (click)="CreateOperationsManagerDialog()"></app-button>
   </div>
 
   <div class="table-paginator-container">

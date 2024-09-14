@@ -1,9 +1,10 @@
 import { Component, Input } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-ribbon',
   standalone: true,
-  imports: [],
+  imports: [TranslateModule],
   templateUrl: './ribbon.component.html',
   styleUrl: './ribbon.component.scss',
 })
