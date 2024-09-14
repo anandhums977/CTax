@@ -28,8 +28,10 @@
     gap: 5px;
     .table-container {
       overflow-x: auto;
+      padding-inline-end: 5px;
       mat-table.mat-mdc-table.mdc-data-table__table.cdk-table {
         min-width: 1000px;
+        max-height: 500px;
     }
       margin-top: 20px;
       ::ng-deep mat-header-cell.mat-mdc-header-cell.mdc-data-table__header-cell.cdk-header-cell.cdk-column--.mat-column--{

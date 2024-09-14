@@ -6,6 +6,7 @@ import { OperationsManagersListingComponent } from './features/roles/operations-
 import { CreateTaxComponent } from './features/roles/root-admin/create-tax/create-tax.component';
 import { ListZoneManagersComponent } from './features/roles/zone-managers/list-zone-managers/list-zone-managers.component';
 import { TaxCollectionDataComponent } from './features/tax-collection-data/tax-collection-data.component';
+import { ListZonesComponent } from './features/zones/list-zones/list-zones.component';
 export const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' }, // Redirect to login if no route is specified
   { path: 'login', component: LoginComponent },
@@ -29,6 +30,10 @@ export const routes: Routes = [
   {
     path: 'create-tax',
     component: CreateTaxComponent,
+  },
+  {
+    path: 'zones-list',
+    component: ListZonesComponent,
   },
   {
     path: 'admin',
