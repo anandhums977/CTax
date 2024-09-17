@@ -57,10 +57,153 @@
         color: $main-green !important;
       }
     }
-
-
   }
 
   .right {
+  }
+
+  .language {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    z-index: 15;
+    height: 100%;
+
+    .language_switch {
+      i {
+        font-size: 14px;
+        font-weight: 900;
+      }
+
+      label {
+        cursor: pointer;
+      }
+
+      .current-lang-img {
+        width: 22px;
+        height: 18px;
+        margin-inline-end: 5px;
+      }
+
+      label {
+        margin-inline-end: 5px;
+      }
+    }
+  }
+
+  ::ng-deep .language_menu.mat-mdc-menu-panel {
+    p {
+      padding: 0;
+      margin: 0;
+    }
+
+    width: 206px;
+    height: 107px;
+    color: #68728a;
+    padding: 15px 20px;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 3px 15px #00000022;
+
+    .mat-mdc-menu-content:not(:empty) {
+      padding: 0px !important;
+    }
+
+    p {
+      font-size: 14px;
+    }
+
+    .each-lang {
+      min-height: 0px;
+      cursor: pointer;
+      height: 35px;
+      display: flex !important;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+
+      span.mat-mdc-menu-item-text {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+      }
+    }
+
+    img {
+      width: 24px;
+      height: 24px;
+      margin-inline-end: 10px;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    .check-icon {
+      width: 24px;
+      height: 24px;
+      margin: 0;
+    }
+  }
+
+  ::ng-deep .language_menu.mat-mdc-menu-panel {
+    width: 206px;
+    height: 107px;
+    color: #68728a;
+    padding: 15px 20px;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 3px 15px #00000022;
+
+    .mat-mdc-menu-content:not(:empty) {
+      padding: 0px !important;
+    }
+
+    p {
+      font-size: 14px;
+    }
+
+    .each-lang {
+      min-height: 0px;
+      cursor: pointer;
+      height: 35px;
+      display: flex !important;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+
+      span.mat-mdc-menu-item-text {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+      }
+    }
+
+    img {
+      width: 24px;
+      height: 24px;
+      margin-inline-end: 10px;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    .check-icon {
+      width: 24px;
+      height: 24px;
+      margin: 0;
+    }
+  }
+
+  .language_switch.mat-mdc-icon-button.mat-mdc-button-base {
+    padding: 12px;
+    display: flex;
+    align-items: center;
   }
 }

@@ -9,6 +9,8 @@ import { TaxCollectionDataComponent } from './features/tax-collection-data/tax-c
 import { ListZonesComponent } from './features/zones/list-zones/list-zones.component';
 import { ListTaxCollectionAreaComponent } from './features/tax-collection-area/list-tax-collection-area/list-tax-collection-area.component';
 import { ListPosComponent } from './features/pos/list-pos/list-pos.component';
+import { UnauthorizedComponent } from './common/unauthorized/unauthorized.component';
+import { NotFoundComponent } from './common/not-found/not-found.component';
 export const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' }, // Redirect to login if no route is specified
   { path: 'login', component: LoginComponent },
@@ -44,6 +46,14 @@ export const routes: Routes = [
   {
     path: 'area-list',
     component: ListTaxCollectionAreaComponent,
+  },
+  {
+    path: 'unauthorized',
+    component: UnauthorizedComponent,
+  },
+  {
+    path: 'not-found',
+    component: NotFoundComponent,
   },
   {
     path: 'admin',
